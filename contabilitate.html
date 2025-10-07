@@ -7,48 +7,114 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <h1 class="logo">Citadin Consulting</h1>
-      <ul>
-        <li><a href="index.html">Acasă</a></li>
-        <li class="dropdown">
-          <a href="#" class="active">Servicii</a>
-          <div class="dropdown-menu">
-            <a href="contabilitate.html" class="active">A. Servicii profesionale de contabilitate</a>
-            <a href="resurse-umane.html">B. Servicii profesionale de resurse umane</a>
-            <a href="consultanta.html">C. Consultanță profesională în afaceri</a>
-          </div>
-        </li>
-        <li><a href="despre.html">Despre noi</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="header-placeholder"></div>
 
   <main class="content">
-    <h2>Servicii profesionale de contabilitate</h2>
-    <p>Oferim servicii complete de contabilitate pentru afacerea dumneavoastră, incluzând:</p>
+    <h1 class="page-title">Servicii profesionale de contabilitate</h1>
     
-    <div class="services">
-      <div class="service">
-        <h3>Contabilitate curentă</h3>
-        <p>Gestionarea zilnică a documentelor contabile și întocmirea registrelor obligatorii.</p>
+    <!-- Secțiunea 1: Contabilitate financiară -->
+    <section class="service-section">
+      <h2 class="section-title">Contabilitate financiară pentru client</h2>
+      <p class="section-intro">Oferim servicii complete de contabilitate financiară, adaptate nevoilor fiecărei afaceri:</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📄</div>
+          <h3>Documente contabile</h3>
+          <p>Organizarea, procesarea și arhivarea documentelor contabile conform reglementărilor legale: facturi, chitanțe, extrase de cont, bonuri fiscale și alte documente justificative.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>Rapoarte financiare</h3>
+          <p>Generarea rapoartelor financiare periodice, adaptate nevoilor fiecărui client — balanță de verificare, bilanț contabil, cont de profit și pierdere.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📝</div>
+          <h3>Declarații fiscale</h3>
+          <p>Întocmirea și înregistrarea declarațiilor fiscale la autoritățile fiscale: TVA, impozit pe venit, contribuții sociale și alte obligații fiscale.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📁</div>
+          <h3>Dosarul contabil</h3>
+          <p>Întocmirea și menținerea dosarului contabil complet al clienților: facturi, chitanțe, contracte, extrase de cont și alte documente relevante.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Software de contabilitate</h3>
+          <p>Înregistrarea și validarea documentelor operaționale în programe specializate de contabilitate, asigurând acuratețea și actualizarea datelor financiare.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <h3>Verificarea exactității</h3>
+          <p>Controlul permanent al corectitudinii înregistrărilor contabile pentru a evita erorile care pot influența situațiile financiare sau rapoartele fiscale.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Rapoarte pentru client</h3>
+          <p>Elaborarea de rapoarte detaliate privind creanțele, plățile, cash-flow-ul și alte situații financiare pentru o imagine clară a activității firmei.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💰</div>
+          <h3>Rapoarte de profitabilitate</h3>
+          <p>Analize lunare, trimestriale și anuale privind performanța financiară a firmei, cu posibilitatea realizării de rapoarte ad-hoc la cererea clientului.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🧮</div>
+          <h3>Calcularea impozitelor</h3>
+          <p>Determinarea corectă a obligațiilor fiscale (TVA, impozit pe venit, impozit pe profit, impozit pe microîntreprinderi) și raportarea către autoritățile fiscale.</p>
+        </div>
       </div>
-      <div class="service">
-        <h3>Declarații fiscale</h3>
-        <p>Pregătirea și depunerea tuturor declarațiilor fiscale la termenele legale.</p>
+    </section>
+
+    <!-- Secțiunea 2: Consultanță -->
+    <section class="service-section consultancy-section">
+      <h2 class="section-title">Consultanță contabilă și fiscală</h2>
+      <p class="section-intro">Vă oferim suport expert pentru optimizarea proceselor contabile și conformitatea fiscală:</p>
+      
+      <div class="services-grid">
+        <div class="service-card highlighted">
+          <div class="service-icon">💡</div>
+          <h3>Pregătirea bugetului și previziuni</h3>
+          <p>Elaborarea bugetului anual și a previziunilor bazate pe scenariul fiscal actual, tendințe actuale sau estimări privind modificările legislației.</p>
+        </div>
+
+        <div class="service-card highlighted">
+          <div class="service-icon">📰</div>
+          <h3>Newslettere legislative</h3>
+          <p>Pregătirea și transmiterea de newslettere privind modificările legislației fiscale și a muncii pentru a menține clienții informați și conformi.</p>
+        </div>
+
+        <div class="service-card highlighted">
+          <div class="service-icon">⚙️</div>
+          <h3>Implementarea de proceduri</h3>
+          <p>Implementarea de metode de management de proiect și proceduri contabile adaptate nevoilor specifice ale fiecărui client.</p>
+        </div>
+
+        <div class="service-card highlighted">
+          <div class="service-icon">🤝</div>
+          <h3>Asistență în controale fiscale</h3>
+          <p>Asistență completă pentru clienți în relația cu autoritățile fiscale sau în cazul controalelor fiscale, asigurând conformitate și reprezentare profesională.</p>
+        </div>
       </div>
-      <div class="service">
-        <h3>Raportări financiare</h3>
-        <p>Întocmirea bilanțurilor contabile și a situațiilor financiare anuale.</p>
-      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+      <h3>Aveți nevoie de servicii de contabilitate?</h3>
+      <p>Contactați-ne astăzi pentru o consultație gratuită și o ofertă personalizată.</p>
+      <a href="contact.html" class="btn">Contactează-ne</a>
     </div>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Citadin Consulting. Toate drepturile rezervate.</p>
-  </footer>
+  <div id="footer-placeholder"></div>
 
   <script src="js/script.js"></script>
 </body>
