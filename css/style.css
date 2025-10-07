@@ -1,0 +1,249 @@
+/* =============================
+   RESET ȘI BODY
+============================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =============================
+   HEADER ȘI NAV
+============================= */
+header {
+  background: #004aad;
+  color: white;
+  padding: 10px 20px;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+  padding: 10px 15px;
+  transition: color 0.2s;
+  position: relative;
+}
+
+/* Previne mișcarea textului când devine bold */
+nav a::after {
+  content: attr(data-text);
+  content: attr(title);
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  font-weight: bold;
+  display: block;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: white;
+}
+
+nav a:hover:not(.active) {
+  color: #ffd700;
+}
+
+/* =============================
+   DROPDOWN MENIU
+============================= */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 320px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  color: #2c3e50;
+  padding: 1rem 1.5rem;
+  display: block;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  font-weight: normal;
+  border-left: 4px solid transparent;
+}
+
+/* Previne mișcarea în dropdown */
+.dropdown-menu a::after {
+  content: attr(data-text);
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  font-weight: bold;
+  display: block;
+  padding: 1rem 1.5rem;
+}
+
+.dropdown-menu a:hover:not(.active) {
+  background: #e9f1ff;
+  color: #004aad;
+}
+
+.dropdown-menu a.active {
+  background: #e9f1ff;
+  font-weight: bold;
+  border-left-color: #004aad;
+  color: #004aad;
+}
+
+/* =============================
+   HERO / SECȚIUNEA PRINCIPALĂ
+============================= */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #e9f1ff;
+}
+
+.btn {
+  background: #004aad;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #003a8c;
+}
+
+/* =============================
+   CONTENT GENERAL
+============================= */
+.content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* =============================
+   SERVICII / CARDS
+============================= */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.service {
+  flex: 1 1 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* =============================
+   FORMULARE
+============================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+button {
+  background: #004aad;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #003a8c;
+}
+
+/* =============================
+   FOOTER
+============================= */
+footer {
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* =============================
+   MEDIA QUERIES (RESPONSIVE)
+============================= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .services {
+    flex-direction: column;
+  }
+
+  .dropdown-menu {
+    position: static;
+    margin-top: 0;
+  }
+}
