@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Citadin Consulting - Contact</title>
-  <link rel="stylesheet" href="css/style.css">
+<div id="contact-float">
+<button id="toggleFormButton" class="toggle-button" onclick="toggleContactForm()">💬</button>
 
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
-<body>
-  <div id="header-placeholder"></div>
-
-  <main class="content">
-    <h2>Contactează-ne</h2>
+<div id="contactFormContainer" class="contact-form-container" style="display: none;">
     <form id="contactForm">
       <label>Nume:</label>
       <input type="text" id="nume" name="nume" placeholder="Introdu numele tău" required>
@@ -40,27 +29,5 @@
 
       <button type="submit">Trimite</button>
     </form>
-
-    <div class="contact-info">
-      <div class="contact-item">
-        <h3>📧 Email</h3>
-        <p>alexandru.cavaler@citadinconsulting.ro</p>
-      </div>
-      <div class="contact-item">
-        <h3>📞 Telefon</h3>
-        <p>+40 744 500 759</p>
-      </div>
-      <div class="contact-item">
-        <h3>📍 Adresă</h3>
-        <p>Bucharest, District 4, Spaiul Unirii Street, No.4, Block B3, Fl.3, 3.4 Office</p>
-      </div>
-    </div>
-
-  </main>
-
-  <div id="footer-placeholder"></div>
-
-  <script src="js/script.js"></script>
-  <script src="js/contact-form.js"></script>
-</body>
-</html>
+</div>
+</div>
