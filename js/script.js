@@ -78,9 +78,17 @@ fetch('contact-float.html')
   .then(response => response.text())
   .then(data => {
     document.body.insertAdjacentHTML('beforeend', data);
-    // aici pui și event listener-ul pentru toggle
-    const contactToggle = document.getElementById("contact-toggle");
-    const contactContainer = document.getElementById("contact-form-container");
+
+    // Reîncarcă scriptul reCAPTCHA pentru elementul nou adăugat
+    const recaptchaScript = document.createElement('script');
+    recaptchaScript.src = 'https://www.google.com/recaptcha/api.js';
+    recaptchaScript.async = true;
+    recaptchaScript.defer = true;
+    document.body.appendChild(recaptchaScript);
+
+    // Activează butonul toggle
+    const contactToggle = document.getElementById("toggleFormButton");
+    const contactContainer = document.getElementById("contactFormContainer");
     contactToggle.addEventListener("click", () => {
       contactContainer.classList.toggle("show");
     });
@@ -130,6 +138,7 @@ function initLanguageToggle() {
     window.location.href = newUrl;
   });
 }
+
 
 
 
