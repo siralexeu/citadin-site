@@ -2,7 +2,6 @@
    RESET ȘI BODY
 ============================= */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -30,7 +29,8 @@ header {
   background: #004aad;
   color: white;
   padding: 10px 25px 15px;
-  z-index: 1000;        
+  z-index: 1000;    
+  box-sizing: border-box;    
 }
 
 header .logo {
@@ -201,55 +201,48 @@ nav ul li.dropdown:hover > a i {
   background: #003a8c;
 }
 
-/* Stiluri personalizate pentru pagina principală */
+/* ==============================
+   ACASA
+============================== */
 .intro-section {
-  background: linear-gradient(135deg, #e9f5ff 0%, #ffffff 100%);
-  padding: 40px 30px;
-  border-radius: 12px;
-  margin-bottom: 40px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #e9f5ff, #ffffff);
+  padding: 40px;
+  /* margin-bottom: 20px; */
 }
-
-.intro-section h1 {
+.service-section h2 a {
+  text-decoration: none;
   color: #004aad;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-align: center;
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
 }
 
-.intro-section p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 15px;
+.service-section h2 a:hover {
+  color: #66cc99; /* galben când faci hover */
 }
 
+.service-section.contabilitate {
+  background: linear-gradient(to right, #cce5ff, #ffffff); /* albastru foarte deschis → alb */
+  padding: 40px;
+}
+
+.service-section.resurse-umane {
+  background: linear-gradient(to right, #d9f2e6, #ffffff); /* verde mentă → alb */
+  padding: 40px;
+}
+
+.service-section.consultanta {
+  background: linear-gradient(to right, #fff0d6, #ffffff); /* portocaliu pastel → alb */
+  padding: 40px;
+}
+
+/* Lipite între ele */
 .service-section {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin-bottom: 30px;
-  border-left: 5px solid #004aad;
-  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 0; 
+  border-radius: 0;
 }
 
-.service-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.service-section h2 {
-  color: #004aad;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.service-section p {
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 12px;
-}
 
 .btn-servicii {
   display: inline-block;
@@ -269,35 +262,21 @@ nav ul li.dropdown:hover > a i {
 }
 
 .final-section {
-  background: linear-gradient(135deg, #e9f5ff 0%, #ffffff 100%);
-  padding: 30px;
-  border-radius: 12px;
-  margin-top: 40px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.final-section h2 {
-  color: #004aad;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.final-section p {
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 12px;
+  background: linear-gradient(to right, #d4edda, #ffffff); 
+  padding: 40px;
+  /* margin-bottom: 20px; */
 }
 
 /* =============================
    CONTENT GENERAL
 ============================= */
-.content {
+/* .content {
   max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
-}
+} */
 /*==============================
-    SERVICII
+    PAGINA SERVICII
 ============================== */
 
 .service-dropdown {
@@ -401,7 +380,6 @@ nav ul li.dropdown:hover > a i {
   margin-bottom: 0.5rem;
 }
 
-
 /* =============================
    CTA SECTION STYLES
 ============================= */
@@ -429,7 +407,7 @@ nav ul li.dropdown:hover > a i {
   background: #ffc700; /* Slightly darker on hover */
 }
 /* =============================
-   FORMULARE
+   FORMULAR CONTACT
 ============================= */
 form {
   display: flex;
@@ -438,6 +416,12 @@ form {
   max-width: 400px;
 }
 
+/* .content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+} */
+ 
 input, textarea {
   padding: 10px;
   border: 1px solid #ccc;
@@ -457,6 +441,56 @@ button {
 
 button:hover {
   background: #003a8c;
+}
+
+.contact-page {
+  min-height: 100vh;               /* ocupă toată înălțimea ecranului */
+  display: flex;
+  justify-content: center;         /* centrează pe orizontală */
+  align-items: center;             /* centrează pe verticală */
+  background: linear-gradient(to bottom right, #e9f5ff, #ffffff);
+  padding: 20px;
+}
+
+/* =============================
+   CONTACT FLOATING BUTTON  
+============================= */
+.toggle-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* Ajustează culoarea */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000; /* Asigură-te că este deasupra altor elemente */
+    transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #45a049; /* Culoare la hover */
+}
+
+.contact-form-container {
+    position: fixed;
+    bottom: 100px; /* Împinge formularul sus de buton */
+    right: 20px;
+    width: 350px; /* Lățimea formularului */
+    background-color: white; /* Fundalul formularului */
+    border: 1px solid #ccc; /* Bordura formularului */
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none; /* Ascunde formularul inițial */
+}
+
+.contact-form-container .g-recaptcha {
+    transform: scale(0.9); /* 0.8 = 80% din dimensiunea normală */
+    transform-origin: top left; /* Fixează poziția după scalare */
 }
 
 /* =============================
@@ -528,46 +562,6 @@ button:hover {
 #backToTopBtn:hover {
   background-color: rgba(100, 100, 100, 0.9);
   transform: translateY(-2px);
-}
-/* =============================
-   CONTACT FLOATING BUTTON  
-============================= */
-.toggle-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #4CAF50; /* Ajustează culoarea */
-    color: white;
-    border: none;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000; /* Asigură-te că este deasupra altor elemente */
-    transition: background-color 0.3s;
-}
-
-.toggle-button:hover {
-    background-color: #45a049; /* Culoare la hover */
-}
-
-.contact-form-container {
-    position: fixed;
-    bottom: 100px; /* Împinge formularul sus de buton */
-    right: 20px;
-    width: 400px; /* Lățimea formularului */
-    background-color: white; /* Fundalul formularului */
-    border: 1px solid #ccc; /* Bordura formularului */
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: none; /* Ascunde formularul inițial */
-}
-
-.contact-form-container .g-recaptcha {
-    transform: scale(0.9); /* 0.8 = 80% din dimensiunea normală */
-    transform-origin: top left; /* Fixează poziția după scalare */
 }
 
 
