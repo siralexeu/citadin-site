@@ -1,11 +1,15 @@
 /* =============================
-   RESET ȘI BODY
+   RESET ȘI BODY 
 ============================= */
 * {
   margin: 0;
   padding: 0;
 }
-
+/* 
+#4FABC4 albastru deschis
+#F03B3E rosu
+#4E4ECE albastru inchis
+*/
 body {
   font-family: Arial, sans-serif;
   background: #f8f9fa;
@@ -15,7 +19,7 @@ body {
 }
 
 main.content {
-  padding-top: 133px;  /* inaltimea headerului */
+  padding-top: 91px;  /* inaltimea headerului */
 }
 
 /* =============================
@@ -26,11 +30,14 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: #004aad;
-  color: white;
+  background: white;
+  color: #F03B3E;
   padding: 10px 25px 15px;
   z-index: 1000;    
   box-sizing: border-box;    
+}
+header.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
@@ -53,7 +60,7 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: #4FABC4;
   text-decoration: none;
   font-weight: normal;
   padding: 8px 12px;
@@ -67,7 +74,7 @@ nav a.active {
 }
 
 nav a:hover:not(.active) {
-  color: #ffd700;
+  color: #F03B3E;
 }
 
 nav ul li.dropdown > a::after {
@@ -80,25 +87,100 @@ nav ul li.dropdown > a::after {
 nav ul li.dropdown:hover > a::after {
   transform: rotate(180deg);
 }
-
+header .logo img {
+  height: 50px; /* ajustează după nevoie */
+  width: auto;  /* păstrează proporțiile */
+  display: block;
+}
 /* =============================
    FOOTER
 ============================= */
 footer {
-  background-color: #f2f2f2;
-  padding: 15px;
+  background: linear-gradient(to bottom, #FAF3DD, #F2EED7);
+  padding: 50px 20px 30px;
   text-align: center;
-  font-size: 14px;
-  color: gray;
+  font-size: 15px;
+  color: #00337F;
+  border-top: 2px solid #C9A700;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+footer h3, footer h4 {
+  color: #00337F;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.footer-info, .footer-links, .footer-contact {
+  margin-bottom: 30px;
+}
+
+.footer-info p {
+  color: #2F6690;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 6px 0;
 }
 
 footer a {
-  color: #0066cc;
+  color: #0077B6;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-  text-decoration: underline;
+  color: #E63946;
+}
+
+.footer-contact p {
+  margin: 6px 0;
+  line-height: 1.7;
+  color: #4E4ECE;
+}
+
+.footer-copyright {
+  padding-top: 20px;
+  border-top: 1px solid #C9A700;
+  margin-top: 20px;
+}
+
+.footer-copyright p {
+  color: #2F6690;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* 🔹 Responsive layout (pentru ecrane mari și mici) */
+@media (min-width: 768px) {
+  footer {
+    text-align: left;
+  }
+
+  footer > div {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  .footer-copyright {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
 }
 
 /* =============================
@@ -134,7 +216,7 @@ footer a:hover {
 
 /* Link-urile din dropdown */
 .dropdown-menu a {
-  color: #2c3e50;
+  color: #4FABC4;
   padding: 0.4rem 0.9rem; /* spațiu redus */
   display: block;
   text-decoration: none;
@@ -158,27 +240,18 @@ footer a:hover {
   padding: 0.4rem 0.9rem;
 }
 
-/* Hover pe opțiuni */
 .dropdown-menu a:hover:not(.active) {
   background: #e9f1ff;
-  color: #004aad;
+  color: #F03B3E;
 }
 
-/* Opțiunea activă */
-.dropdown-menu a.active {
-  background: #e9f1ff;
-  font-weight: bold;
-  border-left-color: #004aad;
-  color: #004aad;
-}
-/* Adaugă săgeata lângă Servicii */
 nav ul li.dropdown:hover > a i {
   transform: rotate(180deg);
   transition: transform 0.3s ease;
 }
 
 /* =============================
-   ACASA
+   ACASA - INDEX.HTML
 ============================= */
 .hero {
   text-align: center;
@@ -186,63 +259,125 @@ nav ul li.dropdown:hover > a i {
   background: #e9f1ff;
 }
 
-.btn {
-  background: #004aad;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #003a8c;
-}
-
-/* ==============================
-   ACASA
-============================== */
-.intro-section {
-  background: linear-gradient(to right, #e9f5ff, #ffffff);
+.about-section {
+  background: white;
   padding: 40px;
-  /* margin-bottom: 20px; */
+}
+.about-section h1 {
+  color: #4FABC4;
+}
+
+.team-section {
+  background: #bff4be;
+  padding: 40px;
+}
+
+.team-section h2 {
+  color: #4E4ECE;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.service-section {
+  background: #cce5ff; 
+  padding: 40px;
+  justify-content: center;
+}
+.service-section h1 {
+  color: #4E4ECE;
+  margin-bottom: 30px;
+}
+.service-items {
+  display: flex; /* Asigură-te că items sunt afișate pe o linie */
 }
 .service-section h2 a {
   text-decoration: none;
-  color: #004aad;
+  color: #333;
   display: inline-block;
-  padding: 15px 25px;
-  border-radius: 6px;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .service-section h2 a:hover {
-  color: #66cc99; /* galben când faci hover */
+  color: #FFA500; 
 }
 
-.service-section.contabilitate {
-  background: linear-gradient(to right, #cce5ff, #ffffff); /* albastru foarte deschis → alb */
+.whyus-section {
+  background:#d4edda; 
+  padding: 40px;
+}
+.whyus-section h1 {
+  color: #4E4ECE;
+}
+
+.partners-section {
+  background: #ffffff;
   padding: 40px;
 }
 
-.service-section.resurse-umane {
-  background: linear-gradient(to right, #d9f2e6, #ffffff); /* verde mentă → alb */
+.partners-section h2 {
+  color: #4E4ECE;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.partners-logos img {
+  max-height: 60px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: filter 0.3s;
+}
+
+.partners-logos img:hover {
+  filter: grayscale(0%);
+}
+
+.testimonials-section {
+  background: #f0f4ff;
   padding: 40px;
 }
 
-.service-section.consultanta {
-  background: linear-gradient(to right, #fff0d6, #ffffff); /* portocaliu pastel → alb */
-  padding: 40px;
+.testimonials-section h2 {
+  color: #4E4ECE;
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
-/* Lipite între ele */
-.service-section {
-  margin: 0; 
-  border-radius: 0;
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
+.testimonial p {
+  font-style: italic;
+  color: #333;
+}
 
 .btn-servicii {
   display: inline-block;
@@ -261,12 +396,15 @@ nav ul li.dropdown:hover > a i {
   transform: translateX(5px);
 }
 
-.final-section {
-  background: linear-gradient(to right, #d4edda, #ffffff); 
-  padding: 40px;
-  /* margin-bottom: 20px; */
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px) {
+  .team-members, .partners-logos, .testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
 }
-
 /* =============================
    CONTENT GENERAL
 ============================= */
@@ -278,134 +416,89 @@ nav ul li.dropdown:hover > a i {
 /*==============================
     PAGINA SERVICII
 ============================== */
-
-.service-dropdown {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Detaliile pentru fiecare serviciu */
-.service-dropdown details {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-}
-
-.service-dropdown details[open] {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Titlul secțiunii (summary) */
 .service-dropdown summary {
   cursor: pointer;
   font-size: 1.4rem;
-  color: #0056b3;
   font-weight: 600;
-  padding: 1.2rem 1.5rem;
-  background: linear-gradient(135deg, #e9f5ff 0%, #ffffff 100%);
+  padding: 15px 20px;
+  color: #004aad;
+  background: #cce5ff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background 0.3s ease;
+  list-style: none;
+  transition: background 0.3s, color 0.3s;
 }
 
 .service-dropdown summary:hover {
-  background: linear-gradient(135deg, #d1e7ff 0%, #f0f8ff 100%);
+  background: #b3d7ff;
+  color: #0056b3;
 }
 
-/* Icon de tip săgeată care se rotește la deschidere */
 .service-dropdown summary::after {
   content: "▾";
-  font-size: 1.5rem;
-  color: #0056b3;
-  transition: transform 0.3s ease;
 }
 
-.service-dropdown details[open] summary::after {
-  transform: rotate(180deg);
-}
-
-/* Conținutul ascuns */
-.service-dropdown p {
-  padding: 1rem 1.5rem;
-  color: #555;
+.service-dropdown p,
+.service-dropdown .services-grid {
+  padding: 15px 20px;
+  color: #004aad;
   line-height: 1.6;
-  font-size: 1.1rem;
-  animation: fadeIn 0.3s ease;
+  font-size: 1.05rem;
+  background: #cce5ff;
+  border-radius: 0;
 }
 
-/* Mică animație la deschidere */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.service-card {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-/* Stil pentru titlurile subsecțiunilor */
-/* Subsecțiuni */
-.subsection {
-  background-color: #f5f5f5; /* fundal deschis */
-  padding: 1rem;
-  margin: 1rem 0;           /* spațiu între subsecțiuni */
-  border-left: 4px solid #ccc; /* indent vizual */
-  border-radius: 6px;
-}
-
-/* Titlul subsecțiunii */
-.subsection-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #444;
-  margin-bottom: 0.5rem;
-}
-
-/* Cardurile din subsecțiune */
-.subsection .service-card {
-  font-size: 0.85rem;
-  padding: 0.5rem;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  margin-bottom: 0.5rem;
+.services-grid .service-card {
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: #004aad;
+  font-size: 1rem;
 }
 
 /* =============================
    CTA SECTION STYLES
 ============================= */
 .cta-section {
-  background: #004aad; /* Change background color */
+  background: #4E4ECE;
   color: white;
   padding: 20px;
-  border-radius: 12px;
   text-align: center;
-  margin-top: 40px;
-}
-
-.cta-section h3 {
-  font-size: 1.5rem;
+  display: flex;               
+  justify-content: center;
+  align-items: center;        
+  flex-wrap: wrap;      
+  gap: 15px;
 }
 
 .cta-section .btn {
-  background: #ffd700; /* Button highlight color */
-  color: #004aad;
-  padding: 10px 20px;
-  border-radius: 6px;
+  background: #ffffff;          
+  color: #004aad;                
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #ffffff;     
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
 }
 
 .cta-section .btn:hover {
-  background: #ffc700; /* Slightly darker on hover */
+  background: #f8f9fa;           
+  color: #F03B3E;                 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
 /* =============================
    FORMULAR CONTACT
 ============================= */
@@ -563,5 +656,4 @@ button:hover {
   background-color: rgba(100, 100, 100, 0.9);
   transform: translateY(-2px);
 }
-
 

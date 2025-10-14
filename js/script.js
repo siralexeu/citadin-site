@@ -4,7 +4,15 @@ fetch('header.html')
   .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
   });
-
+  
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 0) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
 // Încarcă footer-ul
 fetch('footer.html')
   .then(response => response.text())
@@ -95,13 +103,13 @@ fetch('contact-float.html')
   });
 
 // Funcție pentru a afișa/ascunde formularul de contact
-  function toggleContactForm() {
-    const formContainer = document.getElementById('contactFormContainer');
-    if (formContainer.style.display === 'none' || formContainer.style.display === '') {
-        formContainer.style.display = 'block'; // Afișează formularul
-    } else {
-        formContainer.style.display = 'none'; // Ascunde formularul
-    }
+function toggleContactForm() {
+  const formContainer = document.getElementById('contactFormContainer');
+  if (formContainer.style.display === 'none' || formContainer.style.display === '') {
+      formContainer.style.display = 'block'; // Afișează formularul
+  } else {
+      formContainer.style.display = 'none'; // Ascunde formularul
+  }
 }
 
 // Schimbare limbă
@@ -138,7 +146,6 @@ function initLanguageToggle() {
     window.location.href = newUrl;
   });
 }
-
 
 
 
