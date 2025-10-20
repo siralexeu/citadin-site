@@ -17,7 +17,7 @@
       
       <p>Citadin Consulting este o firmă de consultanță specializată în servicii integrate de contabilitate, resurse umane și dezvoltare a afacerii. Cu o echipă de experți cu experiență vastă în domeniu, oferim soluții personalizate pentru companii de toate dimensiunile, de la startup-uri la corporații consacrate. Misiunea noastră este să devenim partenerul strategic de încredere pentru afacerea dumneavoastră, oferind servicii profesionale care combină expertiza tehnică cu o înțelegere profundă a nevoilor specifice ale fiecărui client.</p>
 
-      <p>Ne concentrăm pe trei piloni principali: conformitatea financiară și fiscală, gestionarea optimă a resurselor umane și accesarea de oportunități de finanțare. Fie că aveți nevoie de externalizarea contabilității, administrarea personalului sau de asistență în accesarea fondurilor europene, Citadin Consulting este partenerul care vă ajută să vă concentrați pe creșterea și dezvoltarea afacerii.</p>
+      <p>Ne concentrăm pe trei piloni principali: conformitatea financiară și fiscală, gestionarea optimă a resurselor umane și accesarea de oportunități de finanțare. Fie că aveți nevoie de externalizarea contabilității, administrarea personalului sau servicii de consultanță pentru afaceri, Citadin Consulting este partenerul care vă ajută să vă concentrați pe creșterea și dezvoltarea afacerii.</p>
     </section>
 
         <!-- Secțiunea Echipa -->
@@ -39,14 +39,97 @@
     </section>
 
         <!-- Secțiunea Servicii -->
-    <section class="service-section">
-      <h1>Serviciile Noastre</h1>
-        <div class="service-items">
-          <h2><a href="contabilitate.html">Expertiza Noastră în Contabilitate și Fiscalitate</a></h2>
-          <h2><a href="resurse-umane.html">Soluții Complete de Resurse Umane</a></h2>
-          <h2><a href="consultanta.html">Consultanță în Dezvoltarea Afacerii</a></h2>
+  <section class="service-section">
+        <h1>Serviciile Noastre</h1>
+        <div class="service-diagram">
+            <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                <!-- Definim centrul cercului -->
+                <g transform="translate(300, 300)">
+                    
+                    <!-- Slice 1: Consultanță de afaceri (0-60 grade) -->
+                    <a href="consultanta.html">
+                        <path class="slice" d="M 0,0 L 250,0 A 250,250 0 0,1 125,216.5 Z" 
+                              fill="#b8bfc7" />
+                        <text class="slice-text" x="150" y="60">
+                            <tspan x="150" dy="0">Consultanță</tspan>
+                            <tspan x="150" dy="15">de afaceri</tspan>
+                        </text>
+                    </a>
+
+                    <!-- Slice 2: Administrare de personal (60-120 grade) -->
+                    <a href="administrare.html">
+                        <path class="slice" d="M 0,0 L 125,216.5 A 250,250 0 0,1 -125,216.5 Z" 
+                              fill="#95a0ac" />
+                        <text class="slice-text" x="0" y="160">
+                            <tspan x="0" dy="0">Administrare de personal</tspan>
+                            <tspan x="0" dy="15">& Reg. online</tspan>
+                        </text>
+                    </a>
+
+                    <!-- Slice 3: Servicii de salarizare (120-180 grade) -->
+                    <a href="salarizare.html">
+                        <path class="slice" d="M 0,0 L -125,216.5 A 250,250 0 0,1 -250,0 Z" 
+                              fill="#7d8a98" />
+                        <text class="slice-text" x="-150" y="85">
+                            <tspan x="-150" dy="0">Servicii</tspan>
+                            <tspan x="-150" dy="15">de salarizare</tspan>
+                        </text>
+                    </a>
+
+                    <!-- Slice 4: Consultanță de Resurse Umane (180-240 grade) -->
+                    <a href="resurse-umane.html">
+                        <path class="slice" d="M 0,0 L -250,0 A 250,250 0 0,1 -125,-216.5 Z" 
+                              fill="#a8b2bd" />
+                        <text class="slice-text" x="-150" y="-70">
+                            <tspan x="-150" dy="0">Consultanță</tspan>
+                            <tspan x="-150" dy="15">de Resurse Umane</tspan>
+                        </text>
+                    </a>
+
+                    <!-- Slice 5: Citadin Consulting (240-300 grade) -->
+                    <path class="slice center-slice" d="M 0,0 L -125,-216.5 A 250,250 0 0,1 125,-216.5 Z" 
+                          fill="#6b7985" />
+                    <text class="slice-text" x="0" y="-150">
+                        <tspan x="0" dy="0">Citadin</tspan>
+                        <tspan x="0" dy="15">Consulting</tspan>
+                    </text>
+
+                    <!-- Slice 6: Servicii profesionale de contabilitate (300-360 grade) -->
+                    <a href="contabilitate.html">
+                        <path class="slice" d="M 0,0 L 125,-216.5 A 250,250 0 0,1 250,0 Z" 
+                              fill="#8b95a5" />
+                        <text class="slice-text" x="150" y="-90">
+                            <tspan x="150" dy="0">Servicii profesionale</tspan>
+                            <tspan x="150" dy="15">de contabilitate</tspan>
+                        </text>
+                    </a>
+
+                    <!-- Spatiere intre felii -->
+                    <line x1="0" y1="0" x2="250" y2="0" stroke="white" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="125" y2="216.5" stroke="white" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="-125" y2="216.5" stroke="white" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="-250" y2="0" stroke="white" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="-125" y2="-216.5" stroke="white" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="125" y2="-216.5" stroke="white" stroke-width="2"/>
+                </g>
+            </svg>
         </div>
     </section>
+
+    <!-- Secțiunea Cifre -->
+     <section class="cifre-section">
+        <!-- <h1>Cifre</h1> -->
+        <div class="cifre-items">
+          <div class="cifre-item">
+            <h2>2004</h2>
+            <p>Ne-am început călătoria de afaceri în România</p>
+          </div>
+          <div class="cifre-item">
+            <h2>2025</h2>
+            <p>Peste 150 de companii, ONG-uri si PFA-uri în portofoliul nostru (consultanță, imobiliare, agenții de turism, comerț, servicii, HoReCa) pentru care oferim servicii profesionale de contabilitate, resurse umane și consultanță de afaceri.</p>
+          </div>
+        </div>
+      </section>
 
     <!-- Secțiunea finală -->
     <section class="whyus-section">
@@ -91,15 +174,22 @@
         <!-- Adaugă mai multe testimoniale după nevoie -->
       </div>
     </section>
-    <!-- Call to Action -->
-    <div class="cta-section">
-      <div class="cta-text">
-        <h3>Aveți nevoie de servicii de contabilitate?</h3>
-        <p>Contactați-ne astăzi pentru o consultație gratuită și o ofertă personalizată.</p>
+      <!-- Call to Action -->
+      <div class="cta-section">
+        <div class="cta-text">
+          <h3>Aveți nevoie de servicii de contabilitate?</h3>
+          <p>Contactați-ne astăzi pentru o consultație gratuită și o ofertă personalizată.</p>
+        </div>
+        <a href="contact.html" class="btn-cta">
+          <span>Contactează-ne</span>
+          <svg class="svg-button" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" height="34" width="34">
+            <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+            <path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path>
+          </svg>
+        </a>
       </div>
-      <a href="contact.html" class="btn">Contactează-ne</a>
-    </div>
-  </main>
+
+  <main>
 
   <div id="footer-placeholder"></div>
 

@@ -10,12 +10,44 @@
 #F03B3E rosu
 #4E4ECE albastru inchis
 */
+/* =============================
+   FONT UNIFORM PENTRU TOT SITE-UL
+============================= */
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #f8f9fa;
-  color: #333;
+  font-size: 1rem;
   line-height: 1.6;
-  margin:0;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #4FABC4;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+p, li, a, span, input, textarea {
+  font-size: 1rem;
+  color: #333;
+}
+
+footer {
+  font-size: 1rem;
 }
 
 main.content {
@@ -43,7 +75,6 @@ header.scrolled {
 header .logo {
   text-decoration: none; 
   color: inherit;
-  font-size: 1.8rem;
   font-weight: bold;
 }
 
@@ -223,7 +254,6 @@ footer a:hover {
   transition: color 0.2s, background 0.2s;
   font-weight: normal;
   border-left: 3px solid transparent;
-  font-size: 0.95rem;
   line-height: 1.2;
 }
 
@@ -253,6 +283,9 @@ nav ul li.dropdown:hover > a i {
 /* =============================
    ACASA - INDEX.HTML
 ============================= */
+h1, h2, h3 {
+  text-align: center;
+}
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -262,6 +295,7 @@ nav ul li.dropdown:hover > a i {
 .about-section {
   background: white;
   padding: 40px;
+  justify-content: center;
 }
 .about-section h1 {
   color: #4FABC4;
@@ -273,8 +307,7 @@ nav ul li.dropdown:hover > a i {
 }
 
 .team-section h2 {
-  color: #4E4ECE;
-  font-size: 2rem;
+  color: #333;
   margin-bottom: 30px;
 }
 
@@ -282,6 +315,7 @@ nav ul li.dropdown:hover > a i {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
 .team-member img {
@@ -293,30 +327,98 @@ nav ul li.dropdown:hover > a i {
 
 .team-member p {
   color: #555;
-  font-size: 0.95rem;
+}
+/* ======== DIAGRAMĂ ======== */
+.service-section {
+    background: #cce5ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.service-section {
-  background: #cce5ff; 
-  padding: 40px;
-  justify-content: center;
-}
 .service-section h1 {
-  color: #4E4ECE;
+    color: #333;
+}
+
+.service-diagram {
+    display: flex;
+}
+
+.service-diagram svg {
+    width: 600px;
+    height: 600px; /* fix, nu auto */
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.15));
+}
+
+.slice {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.slice:not(.center-slice):hover {
+    opacity: 0.8;
+}
+
+.slice-text {
+    fill: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-anchor: middle;
+    pointer-events: none;
+}
+
+.center-text {
+    fill: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+@media (max-width: 768px) {
+    .service-section h1 {
+        margin-bottom: 30px;
+    }
+
+    .slice-text {
+        font-size: 11px;
+    }
+
+    .center-text {
+        font-size: 16px;
+    }
+}
+
+.cifre-section {
+  background: #ffdddd; /* o nuanță deschisă, coerentă cu restul */
+  padding: 40px;
+  text-align: center;
+}
+
+.cifre-section h1 {
   margin-bottom: 30px;
 }
-.service-items {
-  display: flex; /* Asigură-te că items sunt afișate pe o linie */
-}
-.service-section h2 a {
-  text-decoration: none;
-  color: #333;
-  display: inline-block;
-  transition: background 0.3s, transform 0.2s;
+
+.cifre-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-.service-section h2 a:hover {
-  color: #FFA500; 
+.cifre-item {
+  flex: 1 1 250px;
+}
+
+.cifre-item h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.cifre-item p {
+  color: #333;
+  line-height: 1.6;
 }
 
 .whyus-section {
@@ -324,7 +426,7 @@ nav ul li.dropdown:hover > a i {
   padding: 40px;
 }
 .whyus-section h1 {
-  color: #4E4ECE;
+  color: #333;
 }
 
 .partners-section {
@@ -333,8 +435,7 @@ nav ul li.dropdown:hover > a i {
 }
 
 .partners-section h2 {
-  color: #4E4ECE;
-  font-size: 2rem;
+  color: #333;
   margin-bottom: 30px;
 }
 
@@ -363,8 +464,7 @@ nav ul li.dropdown:hover > a i {
 }
 
 .testimonials-section h2 {
-  color: #4E4ECE;
-  font-size: 2rem;
+  color: #333;
   margin-bottom: 30px;
 }
 
@@ -379,22 +479,6 @@ nav ul li.dropdown:hover > a i {
   color: #333;
 }
 
-.btn-servicii {
-  display: inline-block;
-  background: #004aad;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-top: 15px;
-  transition: background 0.3s, transform 0.2s;
-  font-weight: 600;
-}
-
-.btn-servicii:hover {
-  background: #003a8c;
-  transform: translateX(5px);
-}
 
 /* =============================
    RESPONSIVE
@@ -416,52 +500,60 @@ nav ul li.dropdown:hover > a i {
 /*==============================
     PAGINA SERVICII
 ============================== */
-.service-dropdown summary {
-  cursor: pointer;
-  font-size: 1.4rem;
-  font-weight: 600;
-  padding: 15px 20px;
-  color: #004aad;
-  background: #cce5ff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  transition: background 0.3s, color 0.3s;
+.service-header {
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 40px;
 }
 
-.service-dropdown summary:hover {
-  background: #b3d7ff;
-  color: #0056b3;
+.service-header h1 {
+  color: #4FABC4;
 }
 
-.service-dropdown summary::after {
-  content: "▾";
+.service-list1,
+.service-list2,
+.service-list3,
+.service-list4 {
+  width: 100%;
+  text-align: left;
+  padding: 40px;
 }
 
-.service-dropdown p,
-.service-dropdown .services-grid {
-  padding: 15px 20px;
-  color: #004aad;
-  line-height: 1.6;
-  font-size: 1.05rem;
-  background: #cce5ff;
-  border-radius: 0;
+.service-list1 h2,
+.service-list2 h2,
+.service-list3 h2,
+.service-list4 h2 {
+  color: #333;
+  text-align: center;
+}
+.service-list1 h3,
+.service-list2 h3,
+.service-list3 h3,
+.service-list4 h3 {
+  text-align: left;
+}
+.service-list1 ul,
+.service-list2 ul,
+.service-list3 ul,
+.service-list4 ul {
+  list-style-type: disc;
+  padding-left: 50px;
 }
 
-.services-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.service-list1 li,
+.service-list2 li,
+.service-list3 li,
+.service-list4 li {
+  color: #333;
+  line-height: 2;
 }
 
-.services-grid .service-card {
-  background: none;
-  padding: 0;
-  margin: 0;
-  color: #004aad;
-  font-size: 1rem;
-}
+/* Culori diferite pentru fiecare listă */
+.service-list1 { background-color: #bff4be; }
+.service-list2 { background-color: #cce5ff; }
+.service-list3 { background-color: #ffdddd; }
+.service-list4 { background-color: #ffe0b3; }
 
 /* =============================
    CTA SECTION STYLES
@@ -471,34 +563,46 @@ nav ul li.dropdown:hover > a i {
   color: white;
   padding: 20px;
   text-align: center;
-  display: flex;               
+  display: flex;
   justify-content: center;
-  align-items: center;        
-  flex-wrap: wrap;      
-  gap: 15px;
+  align-items: center;
+  gap: 50px;
 }
-
-.cta-section .btn {
-  background: #ffffff;          
-  color: #004aad;                
-  padding: 12px 28px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid #ffffff;     
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+.cta-section h3,
+.cta-section p {
+  color: white;
+}
+.btn-cta {
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #cfef00;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
   text-decoration: none;
 }
 
-.cta-section .btn:hover {
-  background: #f8f9fa;           
-  color: #F03B3E;                 
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.btn-cta:hover {
+  background: #c4e201;
 }
 
+.btn-cta > .svg-button {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
 
+.btn-cta:hover .svg-button {
+  transform: translateX(5px);
+}
+
+.btn-cta:active {
+  transform: scale(0.95);
+}
 /* =============================
    FORMULAR CONTACT
 ============================= */
@@ -522,7 +626,7 @@ input, textarea {
   width: 100%;
 }
 
-button {
+#contact-submit {
   background: #004aad;
   color: white;
   border: none;
@@ -532,7 +636,7 @@ button {
   transition: background 0.3s;
 }
 
-button:hover {
+#contact-submit:hover {
   background: #003a8c;
 }
 
@@ -548,42 +652,51 @@ button:hover {
 /* =============================
    CONTACT FLOATING BUTTON  
 ============================= */
-.toggle-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #4CAF50; /* Ajustează culoarea */
-    color: white;
-    border: none;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000; /* Asigură-te că este deasupra altor elemente */
-    transition: background-color 0.3s;
+.tooltip-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(138deg, rgba(3, 169, 244, 1) 15%, rgba(63, 180, 233, 1) 65%);
+  cursor: pointer;
+  font-size: 17px;
+  padding: 0.7em 0.7em;
+  border-radius: 50px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: none;
+  z-index: 1000;
+  transition: all 0.6s;
 }
 
-.toggle-button:hover {
-    background-color: #45a049; /* Culoare la hover */
+.tooltip-container:hover {
+  background: #fff;
+  transition: all 0.6s;
+}
+
+.tooltip-container .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #fff;
+  transition: all 0.2s;
+}
+
+.tooltip-container:hover .text {
+  fill: rgb(3, 169, 244);
+  transition: all 0.6s;
 }
 
 .contact-form-container {
-    position: fixed;
-    bottom: 100px; /* Împinge formularul sus de buton */
-    right: 20px;
-    width: 350px; /* Lățimea formularului */
-    background-color: white; /* Fundalul formularului */
-    border: 1px solid #ccc; /* Bordura formularului */
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: none; /* Ascunde formularul inițial */
-}
-
-.contact-form-container .g-recaptcha {
-    transform: scale(0.9); /* 0.8 = 80% din dimensiunea normală */
-    transform-origin: top left; /* Fixează poziția după scalare */
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 350px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 999;
 }
 
 /* =============================
