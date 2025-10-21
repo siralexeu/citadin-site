@@ -1,4 +1,4 @@
-<div id="contact-float">
+<!-- Formular plutitor -->
 <div id="contact-float">
   <button id="toggleFormButton" class="tooltip-container" onclick="toggleContactForm()">
     <span class="text">
@@ -8,33 +8,32 @@
     </span>
   </button>
 
-<div id="contactFormContainer" class="contact-form-container" style="display: none;">
-    <form id="contactForm">
+  <div id="contactFormContainer" class="contact-form-container">
+    <form id="floatingContactForm">
       <label>Nume:</label>
-      <input type="text" id="nume" name="nume" placeholder="Introdu numele tău" required>
+      <input type="text" id="nume2" name="nume" placeholder="Introdu numele tău" required>
 
       <label>Email:</label>
-      <input type="email" id="email" name="email" placeholder="Introdu emailul tău" required>
+      <input type="email" id="email2" name="email" placeholder="Introdu emailul tău" required>
 
       <label>Telefon:</label>
-      <input type="tel" id="telefon" name="telefon" placeholder="Introdu numărul de telefon" required>
+      <input type="tel" id="telefon2" name="telefon" placeholder="Introdu numărul de telefon" required>
 
       <label>Mesaj:</label>
-      <textarea id="mesaj" name="mesaj" placeholder="Scrie mesajul tău aici..." required></textarea>
+      <textarea id="mesaj2" name="mesaj" placeholder="Scrie mesajul tău aici..." required></textarea>
 
       <div class="terms-container">
         <label class="checkbox-label">
-          <input type="checkbox" id="terms" required>
-          <span>Accept <a href="termeni.html" target="_blank">termenii și condițiile</a> </span>
+          <input type="checkbox" id="terms2" required>
+          <span>Accept <a href="termeni.html" target="_blank">termenii și condițiile</a></span>
         </label>
       </div>
 
-      <!-- CAPTCHA Section -->
       <div class="recaptcha-container">
         <div class="g-recaptcha" data-sitekey="6LeeG-UrAAAAACh5EFcJyIZwZQIm7mIcAAQZBFbP"></div>
       </div>
 
       <button id="contact-submit" type="submit">Trimite</button>
     </form>
-</div>
+  </div>
 </div>

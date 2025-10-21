@@ -35,6 +35,11 @@ fetch('footer.html')
       behavior: "smooth"
     });
   });
+  // === 2️⃣ Anul curent automat ===
+  const yearSpan = document.getElementById('current-year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 });
 
 // Validare formular contact cu reCAPTCHA v2
@@ -146,6 +151,7 @@ function initLanguageToggle() {
     window.location.href = newUrl;
   });
 }
+
 
 
 
