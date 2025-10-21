@@ -1030,6 +1030,28 @@ textarea {
   display: block;
 }
 
+.contact-form-container h2 {
+  font-size: 1.5rem;
+  color: #4FABC4;
+  text-align: center;
+  margin: 0 0 30px 0;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.contact-form-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #F03B3E;
+  border-radius: 2px;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
