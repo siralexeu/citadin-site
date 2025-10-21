@@ -78,7 +78,11 @@ header .logo {
   color: inherit;
   font-weight: bold;
 }
-
+header .logo img {
+  height: 50px; /* ajustează după nevoie */
+  width: auto;  /* păstrează proporțiile */
+  display: block;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -110,19 +114,24 @@ nav a:hover:not(.active) {
 }
 
 nav ul li.dropdown > a::after {
-  content: "⮟";      
+  content: "";
   display: inline-block;
+  width: 12px;
+  height: 12px;
   margin-left: 5px;
+  vertical-align: middle;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 360 360' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='XMLID_225_' fill='%234FABC4' d='M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
   transition: transform 0.3s ease;
 }
 
 nav ul li.dropdown:hover > a::after {
   transform: rotate(180deg);
 }
-header .logo img {
-  height: 50px; /* ajustează după nevoie */
-  width: auto;  /* păstrează proporțiile */
-  display: block;
+
+nav a:hover:not(.active)::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 360 360' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='XMLID_225_' fill='%23F03B3E' d='M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z'/%3E%3C/svg%3E");
 }
 /* =============================
    FOOTER
@@ -356,6 +365,7 @@ h1, h2, h3 {
     width: 640px;
     height: 640px;
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.15));
+    transform: rotate(-90deg); /* Rotește cercul */
 }
 .service-diagram svg a {
     transition: transform 0.3s ease;
@@ -378,11 +388,13 @@ h1, h2, h3 {
 }
 
 .slice-text {
-    fill: white;
+    fill: #333;
     font-size: 16px;
     font-weight: 600;
     text-anchor: middle;
     pointer-events: none;
+    transform: rotate(90deg); /* Contra-rotește textul înapoi */
+    transform-origin: none;
 }
 
 .center-text {

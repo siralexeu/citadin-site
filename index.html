@@ -39,77 +39,114 @@
     </section>
 
         <!-- Secțiunea Servicii -->
-  <section class="service-section">
-        <h1>Serviciile Noastre</h1>
-        <div class="service-diagram">
-            <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                <!-- Definim centrul cercului -->
-                <g transform="translate(300, 300)">
-                    
-                    <!-- Slice 1: Consultanță de afaceri (0-60 grade) -->
+    <section class="service-section">
+          <h1>Serviciile Noastre</h1>
+          <div class="service-diagram">
+              <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Definim centrul cercului -->
+                  <g transform="translate(300, 300)">
+                  
+                    <!-- Slice 1: Servicii profesionale de contabilitate -->
+                    <a href="contabilitate.html">
+                        <path class="slice" d="M 0,0 L 250,0 A 250,250 0 0,1 125,216.5 Z" fill="#c4c4c4" />
+                        <text class="slice-text" transform="rotate(90 150 -90)">
+                            <tspan x="100" y="-150">Servicii profesionale</tspan>
+                            <tspan x="100" y="-130">de contabilitate</tspan>
+                        </text>
+                    </a>
+
+                    <!-- Slice 2: Consultanță de afaceri -->
                     <a href="consultanta.html">
-                        <path class="slice" d="M 0,0 L 250,0 A 250,250 0 0,1 125,216.5 Z" fill="#b8bfc7" />
-                        <text class="slice-text" x="150" y="50">
-                            <tspan x="150" dy="20">Consultanță</tspan>
-                            <tspan x="150" dy="20">de afaceri</tspan>
+                        <path class="slice" d="M 0,0 L 125,216.5 A 250,250 0 0,1 -125,216.5 Z" fill="#d4d4d4" />
+                        <text class="slice-text" transform="rotate(90 150 50)">
+                            <tspan x="140" y="-10">Consultanță</tspan>
+                            <tspan x="140" y="10">de afaceri</tspan>
                         </text>
                     </a>
 
-                    <!-- Slice 2: Administrare de personal (60-120 grade) -->
+                    <!-- Slice 3: Administrare de personal -->
                     <a href="administrare.html">
-                        <path class="slice" d="M 0,0 L 125,216.5 A 250,250 0 0,1 -125,216.5 Z" fill="#95a0ac" />
-                        <text class="slice-text" x="0" y="160">
-                            <tspan x="0" dy="-20">Administrare </tspan>
-                            <tspan x="0" dy="20">de personal</tspan>
-                            <tspan x="0" dy="20">& Reg. online</tspan>
+                        <path class="slice" d="M 0,0 L -125,216.5 A 250,250 0 0,1 -250,0 Z" fill="#a8a8a8" />
+                        <text class="slice-text" transform="rotate(90 0 160)">
+                            <tspan x="80" y="100">Administrare</tspan>
+                            <tspan x="80" y="120">de personal</tspan>
+                            <tspan x="80" y="140">& Reg. online</tspan>
                         </text>
                     </a>
 
-                    <!-- Slice 3: Servicii de salarizare (120-180 grade) -->
+                    <!-- Slice 4: Servicii de salarizare -->
                     <a href="salarizare.html">
-                        <path class="slice" d="M 0,0 L -125,216.5 A 250,250 0 0,1 -250,0 Z" fill="#7d8a98" />
-                        <text class="slice-text" x="-150" y="85">
-                            <tspan x="-150" dy="-20">Servicii</tspan>
-                            <tspan x="-150" dy="20">de salarizare</tspan>
+                        <path class="slice" d="M 0,0 L -250,0 A 250,250 0 0,1 -125,-216.5 Z" fill="#b8b8b8" />
+                        <text class="slice-text" transform="rotate(90 -150 85)">
+                            <tspan x="-80" y="110">Servicii</tspan>
+                            <tspan x="-80" y="130">de salarizare</tspan>
                         </text>
                     </a>
 
-                    <!-- Slice 4: Consultanță de Resurse Umane (180-240 grade) -->
+                    <!-- Slice 5: Consultanță de Resurse Umane -->
                     <a href="resurse-umane.html">
-                        <path class="slice" d="M 0,0 L -250,0 A 250,250 0 0,1 -125,-216.5 Z" fill="#a8b2bd" />
-                        <text class="slice-text" x="-150" y="-70">
-                            <tspan x="-150" dy="0">Consultanță</tspan>
-                            <tspan x="-150" dy="20">de Resurse Umane</tspan>
+                        <path class="slice" d="M 0,0 L -125,-216.5 A 250,250 0 0,1 125,-216.5 Z" fill="#d4d4d4" />
+                        <text class="slice-text" transform="rotate(90 -150 -70)">
+                            <tspan x="-140" y="-10">Consultanță</tspan>
+                            <tspan x="-140" y="10">de Resurse Umane</tspan>
                         </text>
                     </a>
 
-                    <!-- Slice 5: Citadin Consulting (240-300 grade) -->
-                    <path class="slice center-slice" d="M 0,0 L -125,-216.5 A 250,250 0 0,1 125,-216.5 Z" fill="#6b7985" />
-                    <text class="slice-text" x="0" y="-150">
-                        <tspan x="0" dy="0">Citadin</tspan>
-                        <tspan x="0" dy="20">Consulting</tspan>
+                    <!-- Slice 6: Citadin Consulting (static, fără link) -->
+                    <path class="slice center-slice" d="M 0,0 L 125,-216.5 A 250,250 0 0,1 250,0 Z" fill="#989898" />
+                    <text class="slice-text" transform="rotate(90 0 -150)">
+                        <tspan x="-80" y="-140">Citadin</tspan>
+                        <tspan x="-80" y="-120">Consulting</tspan>
                     </text>
 
-                    <!-- Slice 6: Servicii profesionale de contabilitate (300-360 grade) -->
-                    <a href="contabilitate.html">
-                        <path class="slice" d="M 0,0 L 125,-216.5 A 250,250 0 0,1 250,0 Z" fill="#8b95a5" />
-                        <text class="slice-text" x="150" y="-90">
-                            <tspan x="150" dy="20">Servicii profesionale</tspan>
-                            <tspan x="150" dy="20">de contabilitate</tspan>
-                        </text>
-                    </a>
-
                     <!-- Spatiere intre felii -->
-                    <line x1="0" y1="0" x2="250" y2="0" stroke="#4FABC4" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="250" y2="0" stroke="white" stroke-width="2"/>
                     <line x1="0" y1="0" x2="125" y2="216.5" stroke="white" stroke-width="2"/>
                     <line x1="0" y1="0" x2="-125" y2="216.5" stroke="white" stroke-width="2"/>
                     <line x1="0" y1="0" x2="-250" y2="0" stroke="white" stroke-width="2"/>
                     <line x1="0" y1="0" x2="-125" y2="-216.5" stroke="white" stroke-width="2"/>
                     <line x1="0" y1="0" x2="125" y2="-216.5" stroke="white" stroke-width="2"/>
+
+
+                      <path d="M 250,0 A 280,280 0 0,1 240,70" 
+                          stroke="#989898" stroke-width="8" fill="none" 
+                          stroke-linecap="round" marker-end="url(#arrowhead)"/>
+                    
+                      <!-- Săgeata 2: între slice 1 și 2 (dreapta jos) -->
+                      <path d="M 125,216.5 A 280,280 0 0,1 43,268" 
+                            stroke="#989898" stroke-width="8" fill="none" 
+                            stroke-linecap="round" marker-end="url(#arrowhead)"/>
+                      
+                      <!-- Săgeata 3: între slice 2 și 3 (jos stânga) -->
+                      <path d="M -125,216.5 A 280,280 0 0,1 -206,165" 
+                            stroke="#989898" stroke-width="8" fill="none" 
+                            stroke-linecap="round" marker-end="url(#arrowhead)"/>
+                      
+                      <!-- Săgeata 4: între slice 3 și 4 (stânga) -->
+                      <path d="M -250,0 A 280,280 0 0,1 -240,-70" 
+                            stroke="#989898" stroke-width="8" fill="none" 
+                            stroke-linecap="round" marker-end="url(#arrowhead)"/>
+                      
+                      <!-- Săgeata 5: între slice 4 și 5 (stânga sus) -->
+                      <path d="M -125,-216.5 A 280,280 0 0,1 -43,-268" 
+                            stroke="#989898" stroke-width="8" fill="none" 
+                            stroke-linecap="round" marker-end="url(#arrowhead)"/>
+                      
+                      <!-- Săgeata 6: între slice 5 și 6 (sus) -->
+                      <path d="M 125,-216.5 A 280,280 0 0,1 206,-165" 
+                            stroke="#989898" stroke-width="8" fill="none" 
+                            stroke-linecap="round" marker-end="url(#arrowhead)"/>
+                      
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" 
+                                refX="5" refY="3" orient="auto">
+                            <polygon points="0 0, 6 3, 0 6" fill="#989898" />
+                        </marker>
+                    </defs>
                 </g>
-            </svg>
-        </div>
-    </section>
+              </svg>
+          </div>
+      </section>
 
     <!-- Secțiunea Cifre -->
      <section class="cifre-section">
