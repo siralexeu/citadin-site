@@ -425,8 +425,9 @@ h1, h2, h3 {
     }
 }
 
+/* cifre */
 .cifre-section {
-  background: #ffdddd; /* o nuanță deschisă, coerentă cu restul */
+  background: #ffdddd;
   padding: 40px;
   text-align: center;
 }
