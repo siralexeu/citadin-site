@@ -43,6 +43,15 @@
         <button id="contact-submit" type="submit">Trimite</button>
       </form>
 
+      <!-- Modal Success/Error -->
+      <div id="customModal" class="modal-overlay">
+        <div class="modal-container">
+          <h3 id="modalTitle">Titlu mesaj</h3>
+          <p id="modalMessage">Acesta este textul mesajului.</p>
+          <button id="modalClose" class="modal-button">Închide</button>
+        </div>
+      </div>
+
       <div class="contact-info">
         <div class="contact-item">
           <h3>
@@ -78,7 +87,8 @@
   </main>
 
   <div id="footer-placeholder"></div>
-
+  
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/script.js"></script>
   <script src="js/contact-form.js"></script>
 </body>

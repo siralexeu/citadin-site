@@ -43,11 +43,39 @@ fetch('footer.html')
 });
 
 // Validare formular contact cu reCAPTCHA v2
+// Inițializare EmailJS
+emailjs.init('JKX55VRe-8G1AF8IT'); // Înlocuiește cu Public Key-ul tău
+
+// Funcție pentru afișare modal custom
+function showModal(type, title, message) {
+  const modal = document.getElementById('customModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMessage = document.getElementById('modalMessage');
+  
+  // Setează conținutul
+  modalTitle.textContent = title;
+  modalMessage.textContent = message;
+  
+  // Adaugă clasa pentru tip (success/error)
+  modal.className = 'modal-overlay show ' + type;
+  
+  // Închide modalul la click pe buton sau overlay
+  const closeModal = () => {
+    modal.classList.remove('show');
+  };
+  
+  document.getElementById('modalClose').onclick = closeModal;
+  modal.onclick = (e) => {
+    if (e.target === modal) closeModal();
+  };
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
+    // Verifică reCAPTCHA
     const recaptchaResponse = grecaptcha.getResponse();
     if (recaptchaResponse.length === 0) {
       alert('Te rugăm să completezi reCAPTCHA pentru a continua.');
@@ -61,28 +89,51 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     
-    // Colectează datele formularului
-    const nume = document.getElementById('nume').value;
-    const email = document.getElementById('email').value;
-    const telefon = document.getElementById('telefon').value;
-    const mesaj = document.getElementById('mesaj').value;
+    // Dezactivează butonul de submit
+    const submitBtn = document.getElementById('contact-submit');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Se trimite...';
+    submitBtn.disabled = true;
     
-    // Creează link-ul mailto
-    const subject = encodeURIComponent('Contact de la ' + nume);
-    const body = encodeURIComponent(
-      'Nume: ' + nume + '\n' +
-      'Email: ' + email + '\n' +
-      'Telefon: ' + telefon + '\n\n' +
-      'Mesaj:\n' + mesaj
-    );
+    // Parametrii pentru email
+    const templateParams = {
+      nume: document.getElementById('nume').value,
+      email: document.getElementById('email').value,
+      telefon: document.getElementById('telefon').value,
+      mesaj: document.getElementById('mesaj').value
+    };
     
-    // Deschide clientul de email
-    window.location.href = 'mailto:alexandru.cavaler@citadinconsulting.ro?subject=' + subject + '&body=' + body;
-    
-    // Resetează formularul
-    this.reset();
-    grecaptcha.reset(); // Resetează și reCAPTCHA
-    alert('Mulțumim! Clientul tău de email s-a deschis. Te rugăm să trimiți mesajul.');
+   // Trimite emailul prin EmailJS
+    emailjs.send('service_citadin', 'template_citadin', templateParams)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        
+        // Modal de succes
+        showModal(
+          'success',
+          'Mesaj trimis cu succes!',
+          'Mulțumim pentru mesajul dvs. Vă vom răspunde în cel mai scurt timp posibil.'
+        );
+        
+        // Resetează formularul
+        document.getElementById('contactForm').reset();
+        grecaptcha.reset();
+        
+      }, function(error) {
+        console.log('FAILED...', error);
+        
+        // Modal de eroare
+        showModal(
+          'error',
+          'Eroare la trimitere',
+          'A apărut o eroare la trimiterea mesajului. Te rugăm să încerci din nou sau să ne contactezi direct la alexandru.cavaler@citadinconsulting.ro'
+        );
+      })
+      .finally(function() {
+        // Reactivează butonul
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      });
   });
 });
 
