@@ -3,6 +3,7 @@ fetch('header.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
+    initLanguageToggle(); // activăm butonul DUPĂ ce header-ul e inserat
   });
   
 window.addEventListener('scroll', function() {
@@ -168,14 +169,6 @@ function toggleContactForm() {
   }
 }
 
-// Schimbare limbă
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header-placeholder").innerHTML = data;
-    initLanguageToggle(); // activăm butonul DUPĂ ce header-ul e inserat
-  });
-
 function initLanguageToggle() {
   const langButton = document.getElementById("lang-toggle");
   if (!langButton) return;
@@ -202,7 +195,3 @@ function initLanguageToggle() {
     window.location.href = newUrl;
   });
 }
-
-
-
-
