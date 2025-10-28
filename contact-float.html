@@ -9,41 +9,45 @@
   </button>
 
   <div id="contactFormContainer" class="contact-form-container">
-    <h2>Contactează-ne</h2>
-    <form id="floatingContactForm">
-      <label>Nume:</label>
-      <input type="text" id="nume2" name="nume" placeholder="Introdu numele tău" required>
+    <div class="contact-container">
+      <h2>Contactează-ne</h2>
 
-      <label>Email:</label>
-      <input type="email" id="email2" name="email" placeholder="Introdu emailul tău" required>
+      <form id="floatingContactForm">
+        <label>Nume:</label>
+        <input type="text" id="nume2" name="nume" placeholder="Introdu numele tău" required>
 
-      <label>Telefon:</label>
-      <input type="tel" id="telefon2" name="telefon" placeholder="Introdu numărul de telefon" required>
+        <label>Email:</label>
+        <input type="email" id="email2" name="email" placeholder="Introdu emailul tău" required>
 
-      <label>Mesaj:</label>
-      <textarea id="mesaj2" name="mesaj" placeholder="Scrie mesajul tău aici..." required></textarea>
+        <label>Telefon:</label>
+        <input type="tel" id="telefon2" name="telefon" placeholder="Introdu numărul de telefon" required>
 
-      <div class="terms-container">
-        <label class="checkbox-label">
-          <input type="checkbox" id="terms2" required>
-          <span>Accept <a href="termeni.html" target="_blank">termenii și condițiile</a></span>
-        </label>
-      </div>
+        <label>Mesaj:</label>
+        <textarea id="mesaj2" name="mesaj" placeholder="Scrie mesajul tău aici..." required></textarea>
 
-      <div class="recaptcha-container">
-        <div class="g-recaptcha" data-sitekey="6LeeG-UrAAAAACh5EFcJyIZwZQIm7mIcAAQZBFbP"></div>
-      </div>
+        <div class="terms-container">
+          <label class="checkbox-label">
+            <input type="checkbox" id="terms2" required>
+            <span>Accept <a href="termeni.html" target="_blank">termenii și condițiile</a></span>
+          </label>
+        </div>
+
+        <!-- CAPTCHA -->
+        <div class="recaptcha-container">
+          <div class="g-recaptcha" data-sitekey="6LeeG-UrAAAAACh5EFcJyIZwZQIm7mIcAAQZBFbP"></div>
+        </div>
 
         <button id="contact-submit" type="submit">Trimite</button>
-    </form>
-  </div>
-</div>
+      </form>
 
-<!-- Modal Success/Error pentru formularul plutitor -->
-<div id="customModalFloat" class="modal-overlay">
-  <div class="modal-container">
-    <h3 id="modalTitleFloat">Titlu mesaj</h3>
-    <p id="modalMessageFloat">Acesta este textul mesajului.</p>
-    <button id="modalCloseFloat" class="modal-button">Închide</button>
+      <!-- Modal Success/Error -->
+      <div id="customModalFloat" class="modal-overlay">
+        <div class="modal-container">
+          <h3 id="modalTitleFloat">Titlu mesaj</h3>
+          <p id="modalMessageFloat">Acesta este textul mesajului.</p>
+          <button id="modalCloseFloat" class="modal-button">Închide</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

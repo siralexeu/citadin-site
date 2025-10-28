@@ -3,7 +3,7 @@ fetch('header.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
-    initLanguageToggle(); // activăm butonul DUPĂ ce header-ul e inserat
+    initLanguageToggle();
   });
   
 window.addEventListener('scroll', function() {
@@ -14,6 +14,7 @@ window.addEventListener('scroll', function() {
     header.classList.remove('scrolled');
   }
 });
+
 // Încarcă footer-ul
 fetch('footer.html')
   .then(response => response.text())
@@ -22,29 +23,26 @@ fetch('footer.html')
 
     const backToTopBtn = document.getElementById("backToTopBtn");
 
-  window.addEventListener("scroll", function() {
-    if (window.scrollY > 300) {
-      backToTopBtn.classList.add("show");
-    } else {
-      backToTopBtn.classList.remove("show");
+    window.addEventListener("scroll", function() {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
+    });
+
+    backToTopBtn.addEventListener("click", function() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
     }
   });
-
-  backToTopBtn.addEventListener("click", function() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-  // === 2️⃣ Anul curent automat ===
-  const yearSpan = document.getElementById('current-year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
-});
-
-// Validare formular contact cu reCAPTCHA v2
-
 
 // Funcție pentru afișare modal custom
 function showModal(type, title, message) {
@@ -52,16 +50,13 @@ function showModal(type, title, message) {
   const modalTitle = document.getElementById('modalTitle');
   const modalMessage = document.getElementById('modalMessage');
   
-  // Setează conținutul
   modalTitle.textContent = title;
   modalMessage.textContent = message;
-  
-  // Adaugă clasa pentru tip (success/error)
   modal.className = 'modal-overlay show ' + type;
   
-  // Închide modalul la click pe buton sau overlay
   const closeModal = () => {
     modal.classList.remove('show');
+    if (typeof onClose === 'function') onClose();
   };
   
   document.getElementById('modalClose').onclick = closeModal;
@@ -70,143 +65,167 @@ function showModal(type, title, message) {
   };
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+// Funcție pentru afișare modal PLUTITOR
+function showModalFloat(type, title, message) {
+  const modal = document.getElementById('customModalFloat');
+  const modalTitle = document.getElementById('modalTitleFloat');
+  const modalMessage = document.getElementById('modalMessageFloat');
   
-  // Inițializare EmailJS
+  modalTitle.textContent = title;
+  modalMessage.textContent = message;
+  modal.className = 'modal-overlay show ' + type;
+  
+  const closeModal = () => {
+    modal.classList.remove('show');
+  };
+  
+  document.getElementById('modalCloseFloat').onclick = closeModal;
+  modal.onclick = (e) => {
+    if (e.target === modal) closeModal();
+  };
+}
+
+// ⭐ Inițializare EmailJS GLOBALĂ (nu doar în DOMContentLoaded)
+function initEmailJS() {
   if (typeof emailjs !== 'undefined') {
     emailjs.init('JKX55VRe-8G1AF8IT');
+    console.log('EmailJS inițializat cu succes');
+  } else {
+    console.error('EmailJS nu este încărcat');
   }
+}
+
+// Încarcă formularul de contact plutitor
+
+document.addEventListener('DOMContentLoaded', function() {
+  const ctaButton = document.getElementById('ctaOpenForm');
+  const formContainer = document.getElementById('contactFormContainer');
   
-  const contactForm = document.getElementById('contactForm');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Verifică reCAPTCHA
-      const recaptchaResponse = grecaptcha.getResponse();
-      if (recaptchaResponse.length === 0) {
-        alert('Te rugăm să completezi reCAPTCHA pentru a continua.');
-        return;
-      }
-      
-      // Verifică termenii și condițiile
-      const terms = document.getElementById('terms');
-      if (!terms.checked) {
-        alert('Te rugăm să accepți termenii și condițiile pentru a continua.');
-        return;
-      }
-      
-      // Dezactivează butonul de submit
-      const submitBtn = document.getElementById('contact-submit');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Se trimite...';
-      submitBtn.disabled = true;
-      
-      // Parametrii pentru email
-      const templateParams = {
-        nume: document.getElementById('nume').value,
-        email: document.getElementById('email').value,
-        telefon: document.getElementById('telefon').value,
-        mesaj: document.getElementById('mesaj').value
-      };
-      
-      // Trimite emailul prin EmailJS
-      emailjs.send('service_citadin', 'template_citadin', templateParams)
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          
-          // Modal de succes
-          showModal(
-            'success',
-            'Mesaj trimis cu succes!',
-            'Mulțumim pentru mesajul dvs. Vă vom răspunde în cel mai scurt timp posibil.'
-          );
-          
-          // Resetează formularul
-          document.getElementById('contactForm').reset();
-          grecaptcha.reset();
-          
-        }, function(error) {
-          console.log('FAILED...', error);
-          
-          // Modal de eroare
-          showModal(
-            'error',
-            'Eroare la trimitere',
-            'A apărut o eroare la trimiterea mesajului. Te rugăm să încerci din nou sau să ne contactezi direct la alexandru.cavaler@citadinconsulting.ro'
-          );
-        })
-        .finally(function() {
-          // Reactivează butonul
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        });
+  if (ctaButton && formContainer) {
+    ctaButton.addEventListener('click', () => {
+      formContainer.classList.add('show');
     });
   }
-});
-
-// Încarcă formularul de contact plutitor DOAR dacă NU suntem pe pagina de contact
-const currentPage = window.location.pathname;
-const isContactPage = currentPage.includes('contact.html') || 
-                      currentPage.endsWith('contact') || 
-                      currentPage.includes('/en/contact');
-
-if (!isContactPage) {
+  // Încarcă formularul plutitor în toate paginile
   fetch('contact-float.html')
     .then(response => response.text())
     .then(data => {
       document.body.insertAdjacentHTML('beforeend', data);
 
-      // ⭐ ÎNCARCĂ reCAPTCHA dinamic DUPĂ ce formularul e inserat
+      // Încarcă reCAPTCHA dinamic
       const recaptchaScript = document.createElement('script');
       recaptchaScript.src = 'https://www.google.com/recaptcha/api.js';
       recaptchaScript.async = true;
       recaptchaScript.defer = true;
       document.head.appendChild(recaptchaScript);
 
-      // Activează butonul toggle
-      const contactToggle = document.getElementById("toggleFormButton");
-      const contactContainer = document.getElementById("contactFormContainer");
-      
-      if (contactToggle && contactContainer) {
-        contactToggle.addEventListener("click", () => {
-          contactContainer.classList.toggle("show");
-        });
-      }
-
-      // ===== LOGICA FORMULAR PLUTITOR =====
-      const floatingForm = document.getElementById('floatingContactForm');
-      
-      if (floatingForm) {
-        floatingForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          // Verifică reCAPTCHA 
-          const recaptchaResponse = grecaptcha.getResponse();
-          if (!recaptchaResponse || recaptchaResponse.length === 0) {
-            alert('Te rugăm să completezi reCAPTCHA pentru a continua.');
-            return;
+      // Așteaptă EmailJS
+      function waitForEmailJS(callback, maxAttempts = 50) {
+        let attempts = 0;
+        const interval = setInterval(() => {
+          attempts++;
+          if (typeof emailjs !== 'undefined') {
+            clearInterval(interval);
+            initEmailJS();
+            callback();
+          } else if (attempts >= maxAttempts) {
+            clearInterval(interval);
+            console.error('EmailJS nu s-a încărcat în timp util.');
           }
-          
-          // ... restul codului tău
-        });
+        }, 100);
       }
-    })
-    .catch(error => {
-      console.error('Eroare la încărcarea formularului plutitor:', error);
-    });
-}
 
-// Funcție pentru a afișa/ascunde formularul de contact
-function toggleContactForm() {
-  const formContainer = document.getElementById('contactFormContainer');
-  if (formContainer.style.display === 'none' || formContainer.style.display === '') {
-      formContainer.style.display = 'block'; // Afișează formularul
-  } else {
-      formContainer.style.display = 'none'; // Ascunde formularul
-  }
-}
+      waitForEmailJS(() => {
+        const toggleButton = document.getElementById('toggleFormButton');
+        const formContainer = document.getElementById('contactFormContainer');
+        const floatingForm = document.getElementById('floatingContactForm');
+
+        if (toggleButton && formContainer) {
+          toggleButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // împiedică declanșarea evenimentului global
+            formContainer.classList.toggle('show');
+          });
+        }
+
+        // Închide formularul când se face click în afară
+        document.addEventListener('click', (e) => {
+          if (
+            formContainer &&
+            formContainer.classList.contains('show') &&
+            !formContainer.contains(e.target) &&
+            e.target !== toggleButton
+          ) {
+            formContainer.classList.remove('show');
+          }
+        });
+
+        if (floatingForm) {
+          floatingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (typeof grecaptcha === 'undefined') {
+              alert('reCAPTCHA nu este încă încărcat. Te rugăm să aștepți.');
+              return;
+            }
+
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (!recaptchaResponse) {
+              alert('Te rugăm să completezi reCAPTCHA.');
+              return;
+            }
+
+            const terms = document.getElementById('terms2');
+            if (!terms.checked) {
+              alert('Te rugăm să accepți termenii și condițiile.');
+              return;
+            }
+
+            const submitBtn = floatingForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Se trimite...';
+            submitBtn.disabled = true;
+
+            const templateParams = {
+              nume: document.getElementById('nume2').value,
+              email: document.getElementById('email2').value,
+              telefon: document.getElementById('telefon2').value,
+              mesaj: document.getElementById('mesaj2').value
+            };
+
+            emailjs.send('service_citadin', 'template_citadin', templateParams)
+              .then(function() {
+                // Resetează imediat formularul și reCAPTCHA
+                floatingForm.reset();
+                grecaptcha.reset();
+
+                // Arată modalul, închiderea formularului se face doar după OK
+                showModalFloat(
+                  'success',
+                  'Mesaj trimis cu succes!',
+                  'Mulțumim pentru mesajul tău! Vă vom răspunde cât mai curând.',
+                  () => {
+                    formContainer.classList.remove('show'); // formularul se închide după OK
+                  }
+                );
+              })
+              .catch(function() {
+                showModalFloat(
+                  'error',
+                  'Eroare la trimitere',
+                  'A apărut o eroare. Încearcă din nou sau contactează-ne direct.'
+                );
+              })
+              .finally(function() {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+              });
+          });
+        }
+      });
+    })
+    .catch(error => console.error('Eroare la încărcarea formularului plutitor:', error));
+});
+
 
 function initLanguageToggle() {
   const langButton = document.getElementById("lang-toggle");
@@ -214,14 +233,12 @@ function initLanguageToggle() {
 
   const currentUrl = window.location.pathname;
 
-  // setăm textul butonului în funcție de limbă
   if (currentUrl.startsWith("/en/")) {
     langButton.textContent = "Română";
   } else {
     langButton.textContent = "English";
   }
 
-  // la click, schimbăm limba
   langButton.addEventListener("click", () => {
     let newUrl;
 
