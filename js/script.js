@@ -148,31 +148,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Încarcă formularul de contact plutitor DOAR dacă NU suntem pe pagina de contact
 const currentPage = window.location.pathname;
-const isContactPage = currentPage.includes('contact.html') || currentPage.endsWith('contact') || currentPage.includes('/en/contact');
-
-console.log('Pagina curentă:', currentPage);
-console.log('Este pagina de contact?', isContactPage);
+const isContactPage = currentPage.includes('contact.html') || 
+                      currentPage.endsWith('contact') || 
+                      currentPage.includes('/en/contact');
 
 if (!isContactPage) {
-  console.log('Încarcă formularul plutitor...');
-  fetch('/contact-float.html')
+  fetch('contact-float.html')
     .then(response => response.text())
     .then(data => {
       document.body.insertAdjacentHTML('beforeend', data);
 
-      // Reîncarcă scriptul reCAPTCHA pentru elementul nou adăugat
+      // ⭐ ÎNCARCĂ reCAPTCHA dinamic DUPĂ ce formularul e inserat
       const recaptchaScript = document.createElement('script');
       recaptchaScript.src = 'https://www.google.com/recaptcha/api.js';
       recaptchaScript.async = true;
       recaptchaScript.defer = true;
-      document.body.appendChild(recaptchaScript);
+      document.head.appendChild(recaptchaScript);
 
       // Activează butonul toggle
       const contactToggle = document.getElementById("toggleFormButton");
       const contactContainer = document.getElementById("contactFormContainer");
-      contactToggle.addEventListener("click", () => {
-        contactContainer.classList.toggle("show");
-      });
+      
+      if (contactToggle && contactContainer) {
+        contactToggle.addEventListener("click", () => {
+          contactContainer.classList.toggle("show");
+        });
+      }
+
+      // ===== LOGICA FORMULAR PLUTITOR =====
+      const floatingForm = document.getElementById('floatingContactForm');
+      
+      if (floatingForm) {
+        floatingForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Verifică reCAPTCHA 
+          const recaptchaResponse = grecaptcha.getResponse();
+          if (!recaptchaResponse || recaptchaResponse.length === 0) {
+            alert('Te rugăm să completezi reCAPTCHA pentru a continua.');
+            return;
+          }
+          
+          // ... restul codului tău
+        });
+      }
+    })
+    .catch(error => {
+      console.error('Eroare la încărcarea formularului plutitor:', error);
     });
 }
 
