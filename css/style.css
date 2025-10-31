@@ -945,20 +945,30 @@ textarea {
   line-height: 1.5;
 }
 
-.modal-button {
-  background: #4FABC4;
-  color: white;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 6px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
+.modal-button { 
+  background: #4FABC4; 
+  color: white; 
+  border: none; 
+  padding: 12px 28px; 
+  border-radius: 6px; 
+  font-size: 15px; 
+  font-weight: 600; 
+  cursor: pointer; 
   transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+} 
+ 
+.modal-button:hover { 
+  background: #3d96af; 
 }
 
-.modal-button:hover {
-  background: #3d96af;
+.modal-button svg {
+  width: 100%;
+  height: 100%;
+  max-width: 24px;
+  max-height: 24px;
 }
 
 .modal-overlay.success .modal-container h3 {
