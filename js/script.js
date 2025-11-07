@@ -96,21 +96,24 @@ function initEmailJS() {
 }
 
 // Încarcă formularul de contact plutitor
-
 document.addEventListener('DOMContentLoaded', function() {
-  const ctaButton = document.getElementById('ctaOpenForm');
-  const formContainer = document.getElementById('contactFormContainer');
-  
-  if (ctaButton && formContainer) {
-    ctaButton.addEventListener('click', () => {
-      formContainer.classList.add('show');
-    });
-  }
+
   // Încarcă formularul plutitor în toate paginile
   fetch('contact-float.html')
     .then(response => response.text())
     .then(data => {
       document.body.insertAdjacentHTML('beforeend', data);
+
+        const ctaButton = document.getElementById('ctaOpenForm');
+        const formContainer = document.getElementById('contactFormContainer');
+        
+        if (ctaButton && formContainer) {
+          ctaButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Previne navigarea și adăugarea #contact în URL
+            e.stopPropagation(); // Previne declanșarea evenimentului global
+            formContainer.classList.add('show');
+          });
+        }
 
       // Încarcă reCAPTCHA dinamic
       const recaptchaScript = document.createElement('script');
@@ -251,3 +254,4 @@ function initLanguageToggle() {
     window.location.href = newUrl;
   });
 }
+

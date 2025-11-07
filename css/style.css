@@ -708,28 +708,22 @@ h1, h2, h3 {
   background: linear-gradient(138deg, #4FABC4 15%, #3d96af 65%);
   cursor: pointer;
   font-size: 17px;
-  padding: 0.7em 0.7em;
   border-radius: 50%;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   border: none;
   z-index: 1000;
   transition: all 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.tooltip-container:hover {
-  background: #fff;
-}
-
-.tooltip-container .text {
+.tooltip-container .text{
   display: flex;
   align-items: center;
   justify-content: center;
   fill: #fff;
   transition: all 0.3s ease;
-}
-
-.tooltip-container:hover .text {
-  fill: #4FABC4;
 }
 
 /* Formular plutitor */
