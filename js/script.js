@@ -257,3 +257,12 @@ function initLanguageToggle() {
   });
 }
 
+// Adaugă favicon dacă nu există deja
+if (!document.querySelector('link[rel="icon"]')) {
+  const favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/png';
+  favicon.href = '/img/favicon.png'; // cale absolută din root
+  document.head.appendChild(favicon);
+}
+
