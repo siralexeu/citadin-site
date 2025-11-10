@@ -1,25 +1,5 @@
-// Funcție pentru a obține path-ul corect
-function getComponentPath(filename) {
-  const path = window.location.pathname;
-  
-  // Dacă suntem în rădăcină sau index.html
-  if (path.endsWith('/') || path.endsWith('/index.html') || path.split('/').length <= 3) {
-    return './components/' + filename;
-  }
-  
-  // Dacă suntem în /en/
-  if (path.includes('/en/')) {
-    return '../components/' + filename;
-  }
-  
-  // Dacă suntem în subdirectoare (pages/...)
-  const depth = path.split('/').filter(p => p).length - 1;
-  return '../'.repeat(depth) + 'components/' + filename;
-}
-
-
 // Încarcă header-ul
-fetch(getComponentPath('header.html'))
+fetch('/components/header.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
@@ -37,7 +17,7 @@ fetch(getComponentPath('header.html'))
 
 
 // Încarcă footer-ul
-fetch(getComponentPath('footer.html'))
+fetch('/components/footer.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('footer-placeholder').innerHTML = data;
