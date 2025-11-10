@@ -1,7 +1,5 @@
 // Încarcă header-ul
-fetch('/components/header.html')
-  .then(response => response.text())
-  .then(data => {
+fetch('/components/header.html').then(response => response.text()).then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
     initLanguageToggle();
         
@@ -15,11 +13,8 @@ fetch('/components/header.html')
     });
 });
 
-
 // Încarcă footer-ul
-fetch('/components/footer.html')
-  .then(response => response.text())
-  .then(data => {
+fetch('/components/footer.html').then(response => response.text()).then(data => {
     document.getElementById('footer-placeholder').innerHTML = data;
 
     const backToTopBtn = document.getElementById("backToTopBtn");
@@ -43,7 +38,7 @@ fetch('/components/footer.html')
     if (yearSpan) {
       yearSpan.textContent = new Date().getFullYear();
     }
-  });
+});
 
 // Funcție pentru afișare modal custom
 function showModal(type, title, message) {
