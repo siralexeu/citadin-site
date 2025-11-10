@@ -95,18 +95,24 @@ function initEmailJS() {
 document.addEventListener('DOMContentLoaded', function() {
 
   // Încarcă formularul plutitor în toate paginile
-  fetch('/components/contact-float.html')
-    .then(response => response.text())
-    .then(data => {
+  fetch('/components/contact-float.html').then(response => response.text()).then(data => {
       document.body.insertAdjacentHTML('beforeend', data);
 
         const ctaButton = document.getElementById('ctaOpenForm');
         const formContainer = document.getElementById('contactFormContainer');
+        const navButton = document.getElementById('navOpenForm');
         
         if (ctaButton && formContainer) {
           ctaButton.addEventListener('click', (e) => {
             e.preventDefault(); // Previne navigarea și adăugarea #contact în URL
             e.stopPropagation(); // Previne declanșarea evenimentului global
+            formContainer.classList.add('show');
+          });
+        }
+        if (navButton && formContainer) {
+          navButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             formContainer.classList.add('show');
           });
         }
