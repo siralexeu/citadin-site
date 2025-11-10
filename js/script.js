@@ -1,5 +1,5 @@
 // Încarcă header-ul
-fetch('/components/header.html')
+fetch('../components/header.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
@@ -17,7 +17,7 @@ fetch('/components/header.html')
 
 
 // Încarcă footer-ul
-fetch('/components/footer.html')
+fetch('../components/footer.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('footer-placeholder').innerHTML = data;
