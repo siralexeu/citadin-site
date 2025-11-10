@@ -1,5 +1,5 @@
 // Încarcă header-ul
-fetch('header.html')
+fetch('/components/header.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
@@ -16,7 +16,7 @@ window.addEventListener('scroll', function() {
 });
 
 // Încarcă footer-ul
-fetch('footer.html')
+fetch('/components/footer.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('footer-placeholder').innerHTML = data;
@@ -99,7 +99,7 @@ function initEmailJS() {
 document.addEventListener('DOMContentLoaded', function() {
 
   // Încarcă formularul plutitor în toate paginile
-  fetch('contact-float.html')
+  fetch('/components/contact-float.html')
     .then(response => response.text())
     .then(data => {
       document.body.insertAdjacentHTML('beforeend', data);

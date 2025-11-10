@@ -1,0 +1,56 @@
+<!-- Formular plutitor -->
+<div id="contact-float">
+  <button id="toggleFormButton" class="tooltip-container">
+    <span class="text">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 16 16">
+        <circle cx="8" cy="8" r="8" fill="#6DB1FF"/>
+        <path d="M2.5 4.5h11a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5z" fill="white"/>
+        <path d="M2.5 4.5l5.5 4 5.5-4" stroke="white" stroke-width="0.8" fill="none"/>
+        <path d="M2.5 4.5l5.5 4 5.5-4M2 5v6l5-3.5M14 5v6l-5-3.5" stroke="#6DB1FF" stroke-width="0.8" fill="none"/>
+      </svg>
+    </span>
+  </button>
+
+  <div id="contactFormContainer" class="contact-form-container">
+    <div class="contact-container">
+      <h2>Contactează-ne</h2>
+
+      <form id="floatingContactForm">
+        <label>Nume:</label>
+        <input type="text" id="nume2" name="nume" placeholder="Introdu numele tău" required>
+
+        <label>Email:</label>
+        <input type="email" id="email2" name="email" placeholder="Introdu emailul tău" required>
+
+        <label>Telefon:</label>
+        <input type="tel" id="telefon2" name="telefon" placeholder="Introdu numărul de telefon" required>
+
+        <label>Mesaj:</label>
+        <textarea id="mesaj2" name="mesaj" placeholder="Scrie mesajul tău aici..." required></textarea>
+
+        <div class="terms-container">
+          <label class="checkbox-label">
+            <input type="checkbox" id="terms2" required>
+            <span>Accept <a href="../termeni/termeni.html" target="_blank">termenii și condițiile</a></span>
+          </label>
+        </div>
+
+        <!-- CAPTCHA -->
+        <div class="recaptcha-container">
+          <div class="g-recaptcha" data-sitekey="6LeeG-UrAAAAACh5EFcJyIZwZQIm7mIcAAQZBFbP"></div>
+        </div>
+
+        <button id="contact-submit" type="submit">Trimite</button>
+      </form>
+
+      <!-- Modal Success/Error -->
+      <div id="customModalFloat" class="modal-overlay">
+        <div class="modal-container">
+          <h3 id="modalTitleFloat">Titlu mesaj</h3>
+          <p id="modalMessageFloat">Acesta este textul mesajului.</p>
+          <button id="modalCloseFloat" class="modal-button">Închide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

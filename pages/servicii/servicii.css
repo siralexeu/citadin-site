@@ -1,0 +1,54 @@
+.service-header {
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 40px;
+}
+
+.service-header h1 {
+  color: #4FABC4;
+}
+
+.service-list1,
+.service-list2,
+.service-list3,
+.service-list4 {
+  width: 100%;
+  text-align: left;
+  padding: 40px;
+}
+
+.service-list1 h2,
+.service-list2 h2,
+.service-list3 h2,
+.service-list4 h2 {
+  color: #333;
+  text-align: center;
+}
+.service-list1 h3,
+.service-list2 h3,
+.service-list3 h3,
+.service-list4 h3 {
+  text-align: left;
+}
+.service-list1 ul,
+.service-list2 ul,
+.service-list3 ul,
+.service-list4 ul {
+  list-style-type: disc;
+  padding-left: 50px;
+}
+
+.service-list1 li,
+.service-list2 li,
+.service-list3 li,
+.service-list4 li {
+  color: #333;
+  line-height: 2;
+}
+
+/* Culori diferite pentru fiecare listă */
+.service-list1 { background-color: #bff4be; }
+.service-list2 { background-color: #cce5ff; }
+.service-list3 { background-color: #ffdddd; }
+.service-list4 { background-color: #ffe0b3; }

@@ -1,0 +1,279 @@
+h1, h2, h3 {
+  text-align: center;
+}
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #e9f1ff;
+}
+
+.about-section {
+  background: white;
+  padding: 40px;
+  justify-content: center;
+}
+.about-section h1 {
+  color: #4FABC4;
+}
+
+.team-section {
+  background: #bff4be;
+  padding: 40px;
+}
+
+.team-section h2 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  color: #555;
+}
+/* ======== DIAGRAMĂ ======== */
+.service-section {
+    background: #cce5ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.service-section h1 {
+    color: #333;
+}
+
+.service-diagram {
+    display: flex;
+}
+
+.service-diagram svg {
+    width: 640px;
+    height: 640px;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.15));
+    transform: rotate(-90deg); /* Rotește cercul */
+}
+.service-diagram svg a {
+    transition: transform 0.3s ease;
+    transform-origin: 0 0; /* centrul diagramei (0,0) definit în <g translate(300,300)> */
+}
+
+.service-diagram svg a:hover {
+    transform: scale(1.04);
+    z-index: 10; 
+}
+
+.slice {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    transform-origin: 0 0;
+}
+
+.slice:not(.center-slice):hover {
+    opacity: 0.8;
+}
+
+.slice-text {
+    fill: #333;
+    font-size: 16px;
+    font-weight: 600;
+    text-anchor: middle;
+    pointer-events: none;
+    transform: rotate(90deg); /* Contra-rotește textul înapoi */
+    transform-origin: none;
+}
+
+.center-text {
+    fill: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+@media (max-width: 768px) {
+    .service-section h1 {
+        margin-bottom: 30px;
+    }
+
+    .slice-text {
+        font-size: 11px;
+    }
+
+    .center-text {
+        font-size: 16px;
+    }
+}
+
+/* cifre */
+.cifre-section {
+  background: #ffdddd;
+  padding: 40px;
+  text-align: center;
+}
+
+.cifre-section h1 {
+  margin-bottom: 30px;
+}
+
+.cifre-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cifre-item {
+  flex: 1 1 250px;
+}
+
+.cifre-item h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.cifre-item p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.whyus-section {
+  background:#d4edda; 
+  padding: 40px;
+}
+.whyus-section h1 {
+  color: #333;
+}
+
+.partners-section {
+  background: #ffffff;
+  padding: 40px;
+}
+
+.partners-section h2 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.partners-logos img {
+  max-height: 60px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: filter 0.3s;
+}
+
+.partners-logos img:hover {
+  filter: grayscale(0%);
+}
+
+.testimonials-section {
+  background: #f0f4ff;
+  padding: 60px 40px;
+}
+
+.testimonials-section h2 {
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  flex: 1 1 400px;
+  max-width: 500px;
+  position: relative;
+  padding: 0;
+}
+
+.testimonial p {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  color: #333;
+  position: relative;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.testimonial p::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid white;
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.05));
+}
+
+.testimonial h4 {
+  color: #4FABC4;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.testimonial h4::before {
+  content: "— ";
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .testimonial p::before {
+    left: 30px;
+  }
+  
+  .testimonial h4 {
+    margin-left: 20px;
+  }
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media (max-width: 768px) {
+  .team-members, .partners-logos, .testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
+}
