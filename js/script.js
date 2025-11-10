@@ -4,16 +4,17 @@ fetch('/components/header.html')
   .then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
     initLanguageToggle();
-  });
-  
-window.addEventListener('scroll', function() {
-  const header = document.querySelector('header');
-  if (window.scrollY > 0) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
+        
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
 });
+
 
 // Încarcă footer-ul
 fetch('/components/footer.html')
