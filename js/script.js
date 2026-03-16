@@ -5,6 +5,7 @@ fetch('/components/header.html').then(response => response.text()).then(data => 
         
     window.addEventListener('scroll', function() {
       const header = document.querySelector('header');
+      if (!header) return;
       if (window.scrollY > 0) {
         header.classList.add('scrolled');
       } else {
@@ -18,6 +19,7 @@ fetch('/components/footer.html').then(response => response.text()).then(data => 
     document.getElementById('footer-placeholder').innerHTML = data;
 
     const backToTopBtn = document.getElementById("backToTopBtn");
+    if (!backToTopBtn) return;
 
     window.addEventListener("scroll", function() {
       if (window.scrollY > 300) {

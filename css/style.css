@@ -235,7 +235,12 @@ footer #current-year {
   font-size: 13px;
   color: #2F6690;     
 }
-
+.footer-contact i {
+  margin-right: 8px;
+  color: #4E4ECE;
+  font-size: 15px;
+  vertical-align: middle;
+}
 /* =============================
    MENIU DROPDOWN
 ============================= */

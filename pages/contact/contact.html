@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citadin Consulting - Contact</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="content">
+
+    <section class="service-header">
+      <h1>Contact</h1>
+      <p>Suntem aici pentru orice întrebare sau solicitare. Răspundem în cel mai scurt timp posibil.</p>
+    </section>
+
+    <div class="contact-page-layout">
+
+      <!-- Info -->
+      <aside class="contact-page-info">
+        <h2>Informații de contact</h2>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          </div>
+          <div class="contact-detail-body">
+            <span class="contact-detail-label">Telefon</span>
+            <span class="contact-detail-value"><a href="tel:+40722123456">+40 722 123 456</a></span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-detail-body">
+            <span class="contact-detail-label">Email</span>
+            <span class="contact-detail-value"><a href="mailto:contact@citadinconsulting.ro">contact@citadinconsulting.ro</a></span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-detail-body">
+            <span class="contact-detail-label">Adresă</span>
+            <span class="contact-detail-value">București, Sector 4, Strada Unirii, Nr. 1</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="contact-detail-body">
+            <span class="contact-detail-label">Program</span>
+            <span class="contact-detail-value">Luni – Vineri: 09:00 – 18:00</span>
+          </div>
+        </div>
+
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91243.70622538946!2d26.025!3d44.4268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff4770adb5b7%3A0x58125cbad3b12f73!2sBucure%C8%99ti!5e0!3m2!1sro!2sro!4v1680000000000"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Locație Citadin Consulting">
+          </iframe>
+        </div>
+      </aside>
+
+      <!-- Form -->
+      <div class="contact-page-form">
+        <h2>Trimite-ne un mesaj</h2>
+        <p class="form-sub">Completați formularul de mai jos și vă vom contacta în cel mai scurt timp.</p>
+
+        <form id="contactPageForm">
+
+          <div class="form-two-col">
+            <div class="form-field">
+              <label for="numeContact">Nume:</label>
+              <input type="text" id="numeContact" name="nume" placeholder="Introdu numele tău" required>
+            </div>
+            <div class="form-field">
+              <label for="emailContact">Email:</label>
+              <input type="email" id="emailContact" name="email" placeholder="Introdu emailul tău" required>
+            </div>
+          </div>
+
+          <div class="form-two-col">
+            <div class="form-field">
+              <label for="telefonContact">Telefon:</label>
+              <input type="tel" id="telefonContact" name="telefon" placeholder="Introdu numărul de telefon" required>
+            </div>
+            <div class="form-field">
+              <label for="serviciuContact">Serviciu de interes:</label>
+              <select id="serviciuContact" name="serviciu">
+                <option value="" disabled selected>Selectați un serviciu</option>
+                <option value="salarizare">Salarizare</option>
+                <option value="administrare">Administrare</option>
+                <option value="recrutare">Recrutare</option>
+                <option value="consultanta">Consultanță HR</option>
+                <option value="altele">Altele</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="mesajContact">Mesaj:</label>
+            <textarea id="mesajContact" name="mesaj" placeholder="Scrie mesajul tău aici..." required></textarea>
+          </div>
+
+          <div class="terms-container">
+            <label class="checkbox-label">
+              <input type="checkbox" id="termsContact" required>
+              <span>Accept <a href="../termeni/termeni.html" target="_blank">termenii și condițiile</a></span>
+            </label>
+          </div>
+
+          <div class="recaptcha-container">
+            <div class="g-recaptcha" data-sitekey="6LeeG-UrAAAAACh5EFcJyIZwZQIm7mIcAAQZBFbP"></div>
+          </div>
+
+          <button id="page-contact-submit" type="submit">Trimite</button>
+
+        </form>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-text">
+        <h3>Preferați să vorbiți direct cu noi?</h3>
+        <p>Sunați-ne și vă răspundem imediat la orice întrebare.</p>
+      </div>
+      <a href="tel:+40722123456" class="btn-cta">
+        <span>+40 722 123 456</span>
+        <svg class="svg-button" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" height="34" width="34">
+          <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+          <path fill="black" d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"></path>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Modal -->
+  <div id="pageModalOverlay" class="modal-overlay">
+    <div class="modal-container">
+      <h3 id="pageModalTitle">Titlu mesaj</h3>
+      <p id="pageModalMessage">Acesta este textul mesajului.</p>
+      <button id="pageModalClose" class="modal-button">Închide</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="../../js/script.js"></script>
+
+  <script>
+    (function () {
+      // reCAPTCHA
+      const rcScript = document.createElement('script');
+      rcScript.src = 'https://www.google.com/recaptcha/api.js';
+      rcScript.async = true;
+      rcScript.defer = true;
+      document.head.appendChild(rcScript);
+
+      function showPageModal(type, title, message, onClose) {
+        const overlay = document.getElementById('pageModalOverlay');
+        overlay.className = 'modal-overlay ' + type + ' show';
+        document.getElementById('pageModalTitle').textContent = title;
+        document.getElementById('pageModalMessage').textContent = message;
+        document.getElementById('pageModalClose').onclick = function () {
+          overlay.classList.remove('show');
+          if (onClose) onClose();
+        };
+      }
+
+      function waitForEmailJS(callback, maxAttempts = 50) {
+        let attempts = 0;
+        const interval = setInterval(() => {
+          attempts++;
+          if (typeof emailjs !== 'undefined') {
+            clearInterval(interval);
+            initEmailJS();
+            callback();
+          } else if (attempts >= maxAttempts) {
+            clearInterval(interval);
+            console.error('EmailJS nu s-a încărcat în timp util.');
+          }
+        }, 100);
+      }
+
+      waitForEmailJS(() => {
+        const form = document.getElementById('contactPageForm');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          if (typeof grecaptcha === 'undefined') {
+            showPageModal('error', 'Eroare', 'reCAPTCHA nu este încă încărcat. Te rugăm să aștepți.');
+            return;
+          }
+
+          if (!grecaptcha.getResponse()) {
+            showPageModal('error', 'Verificare necesară', 'Te rugăm să completezi reCAPTCHA.');
+            return;
+          }
+
+          if (!document.getElementById('termsContact').checked) {
+            showPageModal('error', 'Termeni neacceptați', 'Te rugăm să accepți termenii și condițiile.');
+            return;
+          }
+
+          const submitBtn = document.getElementById('page-contact-submit');
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = 'Se trimite...';
+          submitBtn.disabled = true;
+
+          emailjs.send('service_citadin', 'template_citadin', {
+            nume:     document.getElementById('numeContact').value,
+            email:    document.getElementById('emailContact').value,
+            telefon:  document.getElementById('telefonContact').value,
+            serviciu: document.getElementById('serviciuContact').value,
+            mesaj:    document.getElementById('mesajContact').value
+          })
+          .then(function () {
+            form.reset();
+            grecaptcha.reset();
+            showPageModal('success', 'Mesaj trimis cu succes!', 'Mulțumim pentru mesajul tău! Vă vom răspunde cât mai curând.');
+          })
+          .catch(function () {
+            showPageModal('error', 'Eroare la trimitere', 'A apărut o eroare. Încearcă din nou sau contactează-ne direct.');
+          })
+          .finally(function () {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          });
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
