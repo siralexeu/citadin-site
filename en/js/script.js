@@ -231,6 +231,10 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(error => console.error('Error loading form component:', error));
 });
 
+const flagIconsCSS = document.createElement('link');
+flagIconsCSS.rel = 'stylesheet';
+flagIconsCSS.href = 'https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css';
+document.head.appendChild(flagIconsCSS);
 
 function initLanguageToggle() {
   const langButton = document.getElementById("lang-toggle");
@@ -238,20 +242,24 @@ function initLanguageToggle() {
 
   const currentUrl = window.location.pathname;
 
-  if (currentUrl.startsWith("/en/")) {
-    langButton.textContent = "Română";
-  } else {
-    langButton.textContent = "English";
-  }
+  const urlMap = {
+    '/en/index.html':                             '/index.html',
+    '/en/pages/services/accounting.html':         '/pages/servicii/contabilitate.html',
+    '/en/pages/services/consulting.html':         '/pages/servicii/consultanta.html',
+    '/en/pages/services/management.html':         '/pages/servicii/administrare.html',
+    '/en/pages/services/payroll.html':            '/pages/servicii/salarizare.html',
+    '/en/pages/services/human-resources.html':    '/pages/servicii/resurse-umane.html',
+    '/en/pages/team/team.html':                   '/pages/echipa/echipa.html',
+    '/en/pages/blog/blog.html':                   '/pages/blog/blog.html',
+    '/en/pages/contact/contact.html':             '/pages/contact/contact.html',
+    '/en/pages/terms/terms.html':                 '/pages/termeni/termeni.html',
+    '/en/pages/terms/privacy-policy.html':        '/pages/termeni/politica-confidentialitate.html',
+  };
+
+  langButton.innerHTML = '<span class="fi fi-gb"></span> English';
 
   langButton.addEventListener("click", () => {
-    let newUrl;
-    if (currentUrl.startsWith("/en/")) {
-      newUrl = currentUrl.replace("/en/", "/");
-    } else {
-      newUrl = "/en" + currentUrl;
-    }
-    window.location.href = newUrl;
+    window.location.href = urlMap[currentUrl] || currentUrl.replace("/en/", "/");
   });
 }
 

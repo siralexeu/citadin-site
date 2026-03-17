@@ -240,22 +240,50 @@ function initLanguageToggle() {
 
   const currentUrl = window.location.pathname;
 
-  if (currentUrl.startsWith("/en/")) {
-    langButton.textContent = "Română";
-  } else {
-    langButton.textContent = "English";
-  }
+  const urlMap = {
+    '/pages/servicii/salarizare.html':    '/en/pages/servicii/salarizare.html',
+    '/pages/servicii/contabilitate.html': '/en/pages/servicii/contabilitate.html',
+    '/pages/servicii/consultanta.html':   '/en/pages/servicii/consultanta.html',
+    '/pages/servicii/administrare.html':  '/en/pages/servicii/administrare.html',
+    '/pages/servicii/resurse-umane.html': '/en/pages/servicii/resurse-umane.html',
+  };
+
+  langButton.textContent = "English";
 
   langButton.addEventListener("click", () => {
-    let newUrl;
+    window.location.href = urlMap[currentUrl] || "/en" + currentUrl;
+  });
+}
+const flagIconsCSS = document.createElement('link');
+flagIconsCSS.rel = 'stylesheet';
+flagIconsCSS.href = 'https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css';
+document.head.appendChild(flagIconsCSS);
 
-    if (currentUrl.startsWith("/en/")) {
-      newUrl = currentUrl.replace("/en/", "/");
-    } else {
-      newUrl = "/en" + currentUrl;
-    }
+function initLanguageToggle() {
+  const langButton = document.getElementById("lang-toggle");
+  if (!langButton) return;
 
-    window.location.href = newUrl;
+  const currentUrl = window.location.pathname;
+
+  const urlMap = {
+    '/index.html':                                '/en/index.html',
+    '/pages/acasa/acasa.html':                    '/en/index.html',
+    '/pages/servicii/contabilitate.html':         '/en/pages/services/accounting.html',
+    '/pages/servicii/consultanta.html':           '/en/pages/services/consulting.html',
+    '/pages/servicii/administrare.html':          '/en/pages/services/management.html',
+    '/pages/servicii/salarizare.html':            '/en/pages/services/payroll.html',
+    '/pages/servicii/resurse-umane.html':         '/en/pages/services/human-resources.html',
+    '/pages/echipa/echipa.html':                  '/en/pages/team/team.html',
+    '/pages/blog/blog.html':                      '/en/pages/blog/blog.html',
+    '/pages/contact/contact.html':                '/en/pages/contact/contact.html',
+    '/pages/termeni/termeni.html':                '/en/pages/terms/terms.html',
+    '/pages/termeni/politica-confidentialitate.html': '/en/pages/terms/privacy-policy.html',
+  };
+
+  langButton.innerHTML = '<span class="fi fi-ro"></span> Română';
+
+  langButton.addEventListener("click", () => {
+    window.location.href = urlMap[currentUrl] || "/en" + currentUrl;
   });
 }
 
