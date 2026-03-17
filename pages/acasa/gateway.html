@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Citadin Consulting - Acces</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    .gate {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 300px;
+    }
+    img { width: 150px; margin-bottom: 20px; }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #00337F;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover { background: #042E7D; }
+    .error { color: red; font-size: 14px; margin-top: 10px; display: none; }
+  </style>
+</head>
+<body>
+  <div class="gate">
+    <img src="/img/logo-removebg.png" alt="Citadin Consulting">
+    <h2>Acces restricționat</h2>
+    <input type="password" id="passwordInput" placeholder="Parolă" />
+    <button onclick="checkPassword()">Intră</button>
+    <p class="error" id="errorMsg">Parolă incorectă. Încearcă din nou.</p>
+  </div>
+
+  <script>
+    const PASSWORD = 'citadin2025'; // schimbă parola aici
+
+    // Dacă e deja autentificat, redirecționează
+    if (localStorage.getItem('citadin_auth') === 'true') {
+      window.location.href = '/';
+    }
+
+    document.getElementById('passwordInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') checkPassword();
+    });
+
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value;
+      if (input === PASSWORD) {
+        localStorage.setItem('citadin_auth', 'true');
+        window.location.href = '/';
+      } else {
+        document.getElementById('errorMsg').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

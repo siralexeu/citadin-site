@@ -1,3 +1,8 @@
+// Password gate
+if (localStorage.getItem('citadin_auth') !== 'true' && !window.location.pathname.includes('gateway')) {
+  window.location.href = '/pages/acasa/gateway.html';
+}
+
 // Detect if we are in the English section
 const isEnglish = window.location.pathname.startsWith('/en/');
 // Define the base path for components based on language

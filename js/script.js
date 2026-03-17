@@ -1,3 +1,8 @@
+// Password gate
+if (localStorage.getItem('citadin_auth') !== 'true' && !window.location.pathname.includes('gateway')) {
+  window.location.href = '/pages/acasa/gateway.html';
+}
+
 // Încarcă header-ul
 fetch('/components/header.html').then(response => response.text()).then(data => {
     document.getElementById('header-placeholder').innerHTML = data;
