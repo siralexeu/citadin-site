@@ -233,27 +233,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(error => console.error('Eroare la încărcarea formularului plutitor:', error));
 });
 
-
-function initLanguageToggle() {
-  const langButton = document.getElementById("lang-toggle");
-  if (!langButton) return;
-
-  const currentUrl = window.location.pathname;
-
-  const urlMap = {
-    '/pages/servicii/salarizare.html':    '/en/pages/servicii/salarizare.html',
-    '/pages/servicii/contabilitate.html': '/en/pages/servicii/contabilitate.html',
-    '/pages/servicii/consultanta.html':   '/en/pages/servicii/consultanta.html',
-    '/pages/servicii/administrare.html':  '/en/pages/servicii/administrare.html',
-    '/pages/servicii/resurse-umane.html': '/en/pages/servicii/resurse-umane.html',
-  };
-
-  langButton.textContent = "English";
-
-  langButton.addEventListener("click", () => {
-    window.location.href = urlMap[currentUrl] || "/en" + currentUrl;
-  });
-}
 const flagIconsCSS = document.createElement('link');
 flagIconsCSS.rel = 'stylesheet';
 flagIconsCSS.href = 'https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css';
