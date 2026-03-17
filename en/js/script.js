@@ -241,19 +241,19 @@ function initLanguageToggle() {
   if (!langButton) return;
 
   const currentUrl = window.location.pathname;
-
+  
   const urlMap = {
-    '/en/index.html':                             '/index.html',
-    '/en/pages/services/accounting.html':         '/pages/servicii/contabilitate.html',
-    '/en/pages/services/consulting.html':         '/pages/servicii/consultanta.html',
-    '/en/pages/services/management.html':         '/pages/servicii/administrare.html',
-    '/en/pages/services/payroll.html':            '/pages/servicii/salarizare.html',
-    '/en/pages/services/human-resources.html':    '/pages/servicii/resurse-umane.html',
-    '/en/pages/team/team.html':                   '/pages/echipa/echipa.html',
-    '/en/pages/blog/blog.html':                   '/pages/blog/blog.html',
-    '/en/pages/contact/contact.html':             '/pages/contact/contact.html',
-    '/en/pages/terms/terms.html':                 '/pages/termeni/termeni.html',
-    '/en/pages/terms/privacy-policy.html':        '/pages/termeni/politica-confidentialitate.html',
+    '/en/index':                              '/index',
+    '/en/pages/services/accounting':         '/pages/servicii/contabilitate',
+    '/en/pages/services/consulting':         '/pages/servicii/consultanta',
+    '/en/pages/services/management':         '/pages/servicii/administrare',
+    '/en/pages/services/payroll':            '/pages/servicii/salarizare',
+    '/en/pages/services/human-resources':    '/pages/servicii/resurse-umane',
+    '/en/pages/team/team':                   '/pages/echipa/echipa',
+    '/en/pages/blog/blog':                   '/pages/blog/blog',
+    '/en/pages/contact/contact':             '/pages/contact/contact',
+    '/en/pages/terms/terms':                 '/pages/termeni/termeni',
+    '/en/pages/terms/privacy-policy':        '/pages/termeni/politica-confidentialitate',
   };
 
   langButton.innerHTML = '<span class="fi fi-gb"></span> English';

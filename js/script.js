@@ -245,18 +245,17 @@ function initLanguageToggle() {
   const currentUrl = window.location.pathname;
 
   const urlMap = {
-    '/index.html':                                '/en/index.html',
-    '/pages/acasa/acasa.html':                    '/en/index.html',
-    '/pages/servicii/contabilitate.html':         '/en/pages/services/accounting.html',
-    '/pages/servicii/consultanta.html':           '/en/pages/services/consulting.html',
-    '/pages/servicii/administrare.html':          '/en/pages/services/management.html',
-    '/pages/servicii/salarizare.html':            '/en/pages/services/payroll.html',
-    '/pages/servicii/resurse-umane.html':         '/en/pages/services/human-resources.html',
-    '/pages/echipa/echipa.html':                  '/en/pages/team/team.html',
-    '/pages/blog/blog.html':                      '/en/pages/blog/blog.html',
-    '/pages/contact/contact.html':                '/en/pages/contact/contact.html',
-    '/pages/termeni/termeni.html':                '/en/pages/terms/terms.html',
-    '/pages/termeni/politica-confidentialitate.html': '/en/pages/terms/privacy-policy.html',
+    '/index':                                      '/en/index',
+    '/pages/servicii/contabilitate':               '/en/pages/services/accounting',
+    '/pages/servicii/consultanta':                 '/en/pages/services/consulting',
+    '/pages/servicii/administrare':                '/en/pages/services/management',
+    '/pages/servicii/salarizare':                  '/en/pages/services/payroll',
+    '/pages/servicii/resurse-umane':               '/en/pages/services/human-resources',
+    '/pages/echipa/echipa':                        '/en/pages/team/team',
+    '/pages/blog/blog':                            '/en/pages/blog/blog',
+    '/pages/contact/contact':                      '/en/pages/contact/contact',
+    '/pages/termeni/termeni':                      '/en/pages/terms/terms',
+    '/pages/termeni/politica-confidentialitate':   '/en/pages/terms/privacy-policy',
   };
 
   langButton.innerHTML = '<span class="fi fi-ro"></span> Română';
